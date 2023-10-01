@@ -258,3 +258,6 @@ function connect() {
 
 const userId = document.getElementById("json_username").textContent.trim();
 console.log(userId);
+if (userId) {
+  connect();
+}
