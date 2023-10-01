@@ -4,7 +4,8 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `wss://sok.onrender.com/chat/`;
+  const url = `wss://carsbay.onrebder.com/chat/`;
+  console.log(url);
   let chatSocket = new WebSocket(url);
   let intervalID;
   const username = document.querySelector("#json_username").textContent.trim();
@@ -154,7 +155,7 @@ function connect() {
   }
 
   chatSocket.onopen = function (e) {
-    // console.log("Opened", e);
+    console.log("Opened", e);
   };
 
   if (navBarMessageElement) {
@@ -255,8 +256,5 @@ function connect() {
   };
 }
 
-const userId = document.getElementById("json_user_id").textContent.trim();
-
-if (userId !== "null") {
-  connect();
-}
+const userId = document.getElementById("json_username").textContent.trim();
+console.log(userId);
