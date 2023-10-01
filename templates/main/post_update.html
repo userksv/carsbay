@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="d-flex justify-content-center ">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <legend class="border-bottom mb-4">Make changes</legend>
+      {{ form.media.js }}
+      {% crispy form %}
+      {% crispy form2 %}
+    </div>
+    <!-- <div class="btn-group d-flex">
+      <button class="btn btn-primary btn-sm m-1" type="submit">Place post</button>
+      <a class="btn btn-secondary btn-sm m-1" href="{% url 'home' %}">Cancel</a>
+    </div> -->
+  </form>
+</div>
+
+{% endif %}
+{% endblock%}

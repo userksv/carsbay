@@ -1,0 +1,93 @@
+{% extends 'main/base.html' %}
+{% load humanize %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 m-2">
+            <div id="carouselExampleInterval" class="carousel slide w-100" data-bs-ride="carousel">
+                <!-- loop for images of the post -->
+                <div class="carousel-inner">
+                    {% for img in post.post_image.all %}
+                    {% if forloop.counter == 1 %}
+                    <div class="carousel-item active">
+                        <img src="{{img.images.url}}" class="d-block w-100 mx-auto" alt="...">
+                    </div>
+                    {% else %}
+                    <div class="carousel-item">
+                        <img src="{{img.images.url}}" class="d-block w-100 mx-auto" alt="...">
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- end for loop for images -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container">
+                <div class="row row-cols-2 ">
+                    <div class="col mb-2 ml-1">
+                        <h3>{{post.make}} {{post.model}}</h3>
+                    </div>
+                    <div class="col">
+                        <h4>{{post.price|intcomma}} ₩</h4>
+                    </div>
+                    <div class="col">Production year</div>
+                    <div class="col">{{post.year}}</div>
+                    <div class="col">Mileage</div>
+                    <div class="col">{{post.mileage|intcomma}} km</div>
+                    <div class="col">City</div>
+                    <div class="col">{{post.city}}</div>
+                </div>
+                <hr>
+                <div class="col">{{post.description}}</div>
+                <hr>
+                <!-- Check if user is logged in -->
+                {% if user.is_authenticated %}
+                {% if user == post.author %}
+                <div>
+                    <a href="{% url 'post-update' post.id %}" class="btn btn-secondary btn-sm w-50"
+                        type="button">Edit</a>
+                </div>
+                {% else %}
+                <a id="post-details-message" class="btn btn-secondary btn-sm w-50" aria-current="page"
+                    data-bs-toggle="offcanvas" href="#offcanvasExample" value="Contact seller"
+                    class="btn btn-secondary btn-sm w-50" aria-controls="offcanvasExample"
+                    data-bs-target="#demo">Contact seller</a>
+                {% endif %}
+                {% else %}
+                <div>
+                    <a href="{% url 'login' %}?next={{request.path}}" class="btn btn-secondary btn-sm w-50"
+                        type="button">Log in to send
+                        message</a>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Data for chat app -->
+{{post.id|json_script:"json_post_id"}}
+
+<div class="offcanvas offcanvas-end" id="demo">
+    <div class="offcanvas-header">
+        <h1 class="offcanvas-title">Messagess</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div>
+        {% include 'chat/chat.html'%}
+    </div>
+</div>
+{% endblock %}

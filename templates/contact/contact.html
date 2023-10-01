@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+{% if submitted %}
+<div class="alert alert-{{ msg.tags }}">
+    {{ msg }}
+</div>
+<a href="{% url 'home' %}">Go to main page</a>
+
+{% else %}
+
+
+<div class="d-flex justify-content-center ">
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <label for="form">
+            <h2>Write your message or wishes</h2>
+        </label>
+        <fieldset class="form-group">
+            {{form|crispy}}
+        </fieldset>
+        <div class="btn-group d-flex">
+            <button class="btn btn-secondary btn-sm m-1 w-50" type="submit">Send message</button>
+            <a class="btn btn-secondary btn-sm m-1 w-50" href="{% url 'home' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endif %}
+{% endblock %}

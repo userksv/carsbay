@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+{% load humanize %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Hi {{user.username}}</h1>
+{% if not posts %}
+<h1>You have no posts</h1>
+{% else %}
+<h1>Here are your posts</h1>
+<section style="background-color: #eee;">
+    <div class="container py-5 w-75">
+        {% for post in posts %}
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border rounded-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                    {% for img in post.post_image.all %}
+                                    {% if forloop.counter == 1 %}
+                                    <img src="{{ img.images.url }}" class="w-100" />
+                                    {% endif %}
+                                    {% endfor %}
+                                    <a href="#!">
+                                        <div class="hover-overlay">
+                                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <a class="text-decoration-none text-dark" href="{% url 'post-detail' post.id %}">
+                                    <h5>{{post.make}} {{post.model}}</h5>
+                                </a>
+                                <div class="d-flex flex-row">
+                                    <div class="mb-1 me-2">
+                                        <h5>{{post.price}} ₩</h5>
+                                        <small>posted: {{post.date_posted|naturalday}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                <div class="d-flex flex-row align-items-center mb-1">
+                                    <!-- <h4 class="mb-1 me-1">$13.99</h4>
+                                    <span class="text-danger"><s>$20.99</s></span> -->
+                                </div>
+                                <!-- <h6 class="text-success">Free shipping</h6> -->
+                                <div class="d-flex flex-column mt-4">
+                                    <a href="{% url 'post-update' post.id %}" class="btn btn-secondary btn-sm"
+                                        type="button">Edit</a>
+                                    <a href="{% url 'post-delete' post.id %}" class="btn btn-outline-danger btn-sm mt-2"
+                                        type="button">
+                                        Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endif %}
+{% endif %}
+{% endblock%}

@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<style>
+</style>
+
+<div class="container w-100 d-flex justify-content-center mt-5">
+  <div class="border m-2 p-1 bg-white" style="width: 50%;">
+    <form method="POST" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col">
+          <img class="w-100" id="profile-image" src="{{p_form.image.value.url}}">
+          <!-- <a href="{{ user.profile.image.url }}" target="_blank">{{ p_form.image.value }}</a> -->
+          {{p_form.image}}
+        </div>
+        <div class="col" id="profile-info">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile info</legend>
+            {{ u_form|crispy }}
+            {% crispy p_form %}
+          </fieldset>
+          <div class="form-group mb-2">
+            <button class="btn w-100 btn-primary btn btn-primary btn-sm" type="submit">Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img " src="{{ user.profile.image.url }}">
+    <div class="media-body">
+      <h2 class="account-heading">{{user.username}}</h2>
+      <p class="text-secondary">{{user.email}}</p>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Profile info</legend>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Save</button>
+        <button class="btn btn-outline-info" type="cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+{% endif %}
+{% endblock%}

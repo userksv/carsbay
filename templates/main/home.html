@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+{% load humanize %}
+{% block content %}
+{% load static%}
+<div class="album py-5 bg-white mt-1">
+  <div class="container">
+    <div class="row">
+
+      {% for post in posts %}
+      <div class="col-md-3">
+        <div class="card border-0 bg-white mb-2">
+          <a href="{% url 'post-detail' post.id %}" style="text-decoration: none; color: black;">
+            <!-- Showing one image -->
+            {% for img in post.post_image.all %}
+            {% if forloop.counter == 1 %}
+
+            <img class="border-0 bg-light" src="{{ img.images.url }}"
+              style=" border-radius:5%; width: 100%; object-fit: cover; height: 200px;">
+            {% endif %}
+            {% endfor %}
+            <h4 class="card-text mb-2">{{post.make}} {{post.model}}</h4>
+            <h6 class="mb-1">{{post.price|intcomma}} ₩</h6>
+            <div class="text-muted mb-0">{{post.year}} / {{post.mileage|intcomma}} km </div>
+            <div class="text-muted">
+              {{post.city}}
+            </div>
+            <small> posted {{post.date_posted|naturalday}}</small>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+<!-- <h1>Home page</h1>
+{% for post in posts %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+        <h2><a class="mr-2" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <small class="text-muted">{{ post.date_posted }}</small>
+        </div>
+        <p>{{ post.make }}</p>
+        <p>{{ post.model }}</p>
+        <p>{{ post.author }}</p>
+        <p>{{ post.id }}</p>
+        <p class="article-content">{{ post.description }}</p>
+    </div>  
+</article>
+{% endfor %} -->
+<!-- {% for post in posts %}
+<div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+      <img class="card-img-top" 
+      data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" 
+      src="{{ post.images.url }}" 
+      data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+      <div class="card-body">
+        <h3 class="card-title">{{post.title}}</h3>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a class="mr-2" href="{% url 'post-detail' post.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          </div>
+          <small class="text-muted">9 mins</small>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}  -->

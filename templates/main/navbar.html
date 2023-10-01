@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Carsbay</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'contact' %}">Contact us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav me-right mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-primary btn-sm" style="width: 150px;" aria-current="page"
+            href="{% url 'post-create' %}">Sell car
+          </a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <!-- Update to dropdown after implementing chat and update profile form -->
+          <a id="messages-navbar" class="nav-link active" aria-current="page" data-bs-toggle="offcanvas"
+            href="#offcanvasExample" value="Contact seller" class="btn btn-secondary btn-sm w-50"
+            aria-controls="offcanvasExample" data-bs-target="#demo">Messages</a>
+        </li>
+        <li class="nav-item">
+          <!-- Update to dropdown after implementing chat and update profile form -->
+          <a class="nav-link active " aria-current="page" href="{% url 'profile' %}">Profile</a>
+        </li>
+        <li class="nav-item">
+          <!-- Update to dropdown after implementing chat and update profile form -->
+          <!-- <a class="nav-link active" aria-current="page" href="">Messages</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Sign up</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{{user.id|json_script:"json_user_id"}}
+
+<div class="offcanvas offcanvas-end" id="demo" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+  <div class="offcanvas-body" id="chat-page">
+    {% include 'chat/chat.html' %}
+  </div>
+</div>

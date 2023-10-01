@@ -1,0 +1,2249 @@
+{
+"results" : [
+
+  {
+    "objectId": "6QydypW36V",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Ioniq Plug-in Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "EGGXKACo3i",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Kona",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "Y3GJ8K4M4S",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Venue",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "5zZQgjervc",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "8dV1hBn4zJ",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "Q4VCKpXBEi",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "zgmKmj3CBJ",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Ioniq Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "N6K1CzYTtN",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Elantra GT",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "nTkGSOoFYG",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "NEXO",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "fIusqVrcV5",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Ioniq Plug-in Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "iBhh8O4gcx",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Ioniq Plug-in Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "PYBxHDGIj4",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "dyIzyHbqXd",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "DmLaGUDZHd",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Sonata Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "cQlDWUTeHX",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Equus",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "vJiEQcykmW",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Tucson Fuel Cell",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "ATqjsK8UJq",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Santa Fe XL",
+    "Category": "SUV",
+    "field5": "Acura",
+    "field6": "ILX",
+    "field7": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "4pF4zuURri",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Kona",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "OHE3YQOKV3",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "2KFSHGNpt2",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "SBszGLz939",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "FjIdYot0kq",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Ioniq Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "K2mrH8bktF",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "s5aFovwbTa",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Elantra GT",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "cCdw6msnxz",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "vzRcv0f2WT",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "ABPJGrdoUz",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "gKZYQWE5Kq",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "S6zczzhT5D",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "gxePGCjKQX",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Sonata Plug-in Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "2r2tmmxhsD",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Sonata Plug-in Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "AgHyp4ztmO",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Coupe, Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "PF2TrDgZHm",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Sonata Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "izNTsqKJ2f",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "w81PJEnjE5",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "K2qmbZu8St",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "ETPxI3Iohw",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "7zMcF3GJmT",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Santa Fe Sport",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "5u0fMmzbVJ",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "oBuK1unAQV",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "qEN2NIAKXf",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Santa Fe Sport",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "u1LFQend7A",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "NEXO",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "9OWwfo8BBn",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Elantra GT",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "Gm6Dd0W4CK",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "S6DM0c2JkP",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Palisade",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "FAewENzoQ9",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "JbPTeaHBku",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "GA7o1X7hXF",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Elantra GT",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "ZNGkqGGGgr",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "1dar3l5anK",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "nAYflXbMa6",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Ioniq Electric",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "lxl9XuVoZX",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "PLI8HMMQBP",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "7iYSWRvbuT",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Elantra GT",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "HJ4smmaJIZ",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "sLpNG0ZedH",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Kona Electric",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "T5rXe9xHUJ",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "7DBjPCPNR7",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "MGzb1tuR3r",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "SUhQ9YmfKi",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Sonata Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "M4hFgDHNb3",
+    "Year": 2020,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "uicvIjp9uJ",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Sonata Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "E2FvzJou9h",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Ioniq Electric",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "5biDTU1M84",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "xKIUW5N21A",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Tucson Fuel Cell",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "Jrezu6Oi7P",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Kona Electric",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "BD5dPGzVJK",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Elantra GT",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "vODe5VU0Ly",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "ANg79HMNKl",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "j96og6tvZn",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "m63nbAlYdb",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Santa Fe Sport",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "Ffg7Pne705",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Equus",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "4QsJWyXKTQ",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "s4HjnQiZJO",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Sonata Plug-in Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "qNjAJoDzQe",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Kona",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "QRlnuSGGnv",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "3vB2YqJ8gn",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "U4eQBVvF42",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "32heKtpU5J",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "AtVYNMMBaW",
+    "Year": 2019,
+    "Make": "Hyundai",
+    "Model": "Sonata Plug-in Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "TqRsnOZnts",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "RNIDtnhmW0",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "CWskNbpyn1",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Tucson Fuel Cell",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "stDrtEYggV",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Santa Fe Sport",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "bAT7sGb4RD",
+    "Year": 2017,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "pKa7CCxO9u",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "OJ4HheLJp0",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "6zTU8Lx8Rs",
+    "Year": 2015,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "ZCg1KqNdCM",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "VEfwoD7ISE",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Hatchback, Coupe",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "mCHDiuFrpA",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "bbsR8CdFpI",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "yNKB7w6nkT",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Ioniq Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "D7g29Hoz9D",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Santa Fe Sport",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "3NAnn8kapI",
+    "Year": 2018,
+    "Make": "Hyundai",
+    "Model": "Ioniq Electric",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:32.760Z",
+    "updatedAt": "2020-01-27T21:32:32.760Z"
+  },
+  {
+    "objectId": "63oyOPuZuJ",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Equus",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "pPWRlo2Kj4",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "HNLtl3Gbij",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "dgYYaskFjO",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "1dRys95AGL",
+    "Year": 2016,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "6uwzzGbWH1",
+    "Year": 2014,
+    "Make": "Hyundai",
+    "Model": "Equus",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:32.761Z",
+    "updatedAt": "2020-01-27T21:32:32.761Z"
+  },
+  {
+    "objectId": "MrxcC6J7XP",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "FKhTHbhb4v",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "2FHoHPFeDw",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "AcVbE0M4xx",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "aPytwPTzRY",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Equus",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "1NBkr9sVFP",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "V82zWI1R2q",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "5Jo9olrybh",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Wagon",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "cdMyKPp1w7",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "uqmm0W0eTu",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "e6AbA1TAqv",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "U1HFnZh7YB",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Wagon, Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "UF8gJ8QjsC",
+    "Year": 2013,
+    "Make": "Hyundai",
+    "Model": "Santa Fe Sport",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "kphYGfvXOH",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Equus",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "chX621aMDh",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "LD89x8fBDV",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "hA93xjwyG1",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "di6aCoJhGD",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "JCwBAQS1eA",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "zOw956ekQL",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "6TUgfniSgl",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "MWVCkTF3FA",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Veracruz",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "ZdDTXVY3yB",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "aQQMqBD7rq",
+    "Year": 2012,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "IkScSb8fqj",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "lMoBjWyFoj",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Veracruz",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "HAaQyR2mpU",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "mEIihaVaRo",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "sBmCy7aIJ1",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "cYBOinhb39",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "p3ZE2dexD7",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "HXyVgokzX0",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "3nCoJq1Gco",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Wagon, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "H29PC5iaEM",
+    "Year": 2011,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.016Z",
+    "updatedAt": "2020-01-27T21:32:33.016Z"
+  },
+  {
+    "objectId": "4AszKI9uDx",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Veracruz",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "athZz0r21W",
+    "Year": 2010,
+    "Make": "Hyundai",
+    "Model": "Genesis Coupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "o3o545OGFu",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "OJGk7vBuSN",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "Knrc8Ln7vM",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "VnXczeFbJc",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "bJgJNvBGL2",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "rxFi0qFXzz",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "7Bfr0oBRHD",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "nDBcCCmvhN",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "ewF4YQornC",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Veracruz",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "wkd2zta8Yb",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "VZivi9zmOp",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "XG350",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "gEVApn7Roo",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Wagon",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "XFMPt0AJNq",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "NCNWyceTXY",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "8ztl0qBpJw",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "svj52hCW3c",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "eBFJCY7diq",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "ypb173dGnI",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "Cadtjt5Osw",
+    "Year": 2009,
+    "Make": "Hyundai",
+    "Model": "Genesis",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "3CIFSoI7FM",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Veracruz",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "bXglWNlK0D",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "RHUGNeUR0X",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Entourage",
+    "Category": "Van/Minivan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "SM8XrQP89M",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "47fxitYJgs",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Veracruz",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "K0BtuzisaB",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Entourage",
+    "Category": "Van/Minivan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "ePH47CWm8v",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "T98CHtCVWh",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "CaFnIewZpC",
+    "Year": 2004,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "jHB4FBLmv0",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "uWYjGhrmEo",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Azera",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "NQLK06JTA4",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "N5XfUD1mlg",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "FjsHQWBK2G",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "tPFB6ZXAca",
+    "Year": 2008,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "1XzdqSU5YY",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "GFY81JICG3",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "pGTr9WZIOB",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "cCznXED7a7",
+    "Year": 2004,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "yXd7x9cE78",
+    "Year": 2007,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "2JgDIjD1jH",
+    "Year": 2006,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "v2haiREzLG",
+    "Year": 2005,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "euWbJmL8Kb",
+    "Year": 2003,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "cB3M3eUfEN",
+    "Year": 2003,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "C0aTxWDb05",
+    "Year": 2004,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "pPEDpMdjEN",
+    "Year": 2003,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "iP4dGU0nBr",
+    "Year": 2004,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "B0Y6oeEiLI",
+    "Year": 2004,
+    "Make": "Hyundai",
+    "Model": "XG350",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "jtQ2ASxMIj",
+    "Year": 2004,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "RS14heNRIX",
+    "Year": 2003,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "8chN44lyXf",
+    "Year": 2001,
+    "Make": "Hyundai",
+    "Model": "XG300",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "tcPNf7pjKa",
+    "Year": 2001,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "nFY3wnDpAa",
+    "Year": 2003,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "zhS1biD6v6",
+    "Year": 2002,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "mbG1xhUMe8",
+    "Year": 2003,
+    "Make": "Hyundai",
+    "Model": "XG350",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "XEDI4IPxG6",
+    "Year": 2000,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "EiDwJtUewa",
+    "Year": 2002,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "U5ckQ3lZC5",
+    "Year": 2001,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "pTQg95KIk8",
+    "Year": 2002,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "wyBjE5k4sS",
+    "Year": 2001,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "DZcHElTBir",
+    "Year": 2002,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "TsN41Dczzf",
+    "Year": 2000,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Wagon, Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "nyy3FtWmCS",
+    "Year": 2001,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "PZI8Xe7ISf",
+    "Year": 2002,
+    "Make": "Hyundai",
+    "Model": "XG350",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "YqtQqwBrFX",
+    "Year": 2001,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:33.017Z",
+    "updatedAt": "2020-01-27T21:32:33.017Z"
+  },
+  {
+    "objectId": "dahaReqEkA",
+    "Year": 1999,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "ThlCZQJ7I0",
+    "Year": 2000,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.050Z",
+    "updatedAt": "2020-01-27T21:32:33.050Z"
+  },
+  {
+    "objectId": "dvdP3OsLHS",
+    "Year": 1999,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "PrqaeMg0ZS",
+    "Year": 1996,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "eCJ9pnSjW9",
+    "Year": 1998,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "0A0ZKrHx9O",
+    "Year": 1997,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "8bdhZoHlkD",
+    "Year": 1998,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Wagon",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "CCjNd2Yp3Y",
+    "Year": 1996,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Wagon",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "Ey8WmTiicn",
+    "Year": 1995,
+    "Make": "Hyundai",
+    "Model": "Scoupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "KgA3MOANwo",
+    "Year": 1997,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Wagon, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "NyjbdDtrXQ",
+    "Year": 1998,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "kLCjvMl7i3",
+    "Year": 2000,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "1vmTpQbKhh",
+    "Year": 1998,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "n636NXdblc",
+    "Year": 1999,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan, Wagon",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "RBZ3wh1gYL",
+    "Year": 1997,
+    "Make": "Hyundai",
+    "Model": "Tiburon",
+    "Category": "Hatchback",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "sy0evDfkCN",
+    "Year": 1999,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "eZdPlE0Aa7",
+    "Year": 1996,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "HaYJEoCCLg",
+    "Year": 1997,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "yj71ixPalB",
+    "Year": 1995,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "IrK3u9YD7a",
+    "Year": 1994,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "XNafaMCAnf",
+    "Year": 1993,
+    "Make": "Hyundai",
+    "Model": "Excel",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "DW9BkvXVpO",
+    "Year": 1992,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "6NY4Gy4jge",
+    "Year": 1994,
+    "Make": "Hyundai",
+    "Model": "Excel",
+    "Category": "Hatchback, Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "awfbpNiADr",
+    "Year": 1995,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "hUSQgVHZ9n",
+    "Year": 1994,
+    "Make": "Hyundai",
+    "Model": "Scoupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "qqdtahpNjA",
+    "Year": 1993,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "9Qo8KOFckr",
+    "Year": 1994,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "Perv6488b6",
+    "Year": 1995,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "lKK1RKykPQ",
+    "Year": 1992,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "qMjSaHp5uG",
+    "Year": 1993,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "rHdvkVlFMT",
+    "Year": 1992,
+    "Make": "Hyundai",
+    "Model": "Scoupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "xiTo0Hwd8D",
+    "Year": 1993,
+    "Make": "Hyundai",
+    "Model": "Scoupe",
+    "Category": "Coupe",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "n0EPJo5JMu",
+    "Year": 1992,
+    "Make": "Hyundai",
+    "Model": "Excel",
+    "Category": "Sedan, Hatchback",
+    "createdAt": "2020-01-27T21:32:33.051Z",
+    "updatedAt": "2020-01-27T21:32:33.051Z"
+  },
+  {
+    "objectId": "SpIO2de1uE",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Ioniq Electric",
+    "Category": "Hatchback",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "d9QDiYBdAa",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Elantra",
+    "Category": "Sedan",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "irzAbiwAaH",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Accent",
+    "Category": "Sedan",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "WAj56Hl3Rl",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Sonata Hybrid",
+    "Category": "Sedan",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "lcHGHy2Fv7",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Venue",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "jih7GcFguk",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Veloster",
+    "Category": "Coupe",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "8M75yo29tj",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Santa Fe",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "mhJYxU19e0",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Kona",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "X1y3FzzILL",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Sonata",
+    "Category": "Sedan",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "Yp0GHwHV20",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Kona Electric",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "hZLAsgJdFA",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Ioniq Plug-in Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "bDFAn0cSba",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Palisade",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "npMjVs7pZy",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "U4Py9VI082",
+    "Year": 2021,
+    "Make": "Hyundai",
+    "Model": "Ioniq Hybrid",
+    "Category": "Hatchback",
+    "createdAt": "2021-04-15T13:23:08.173Z",
+    "updatedAt": "2021-04-15T13:23:08.173Z"
+  },
+  {
+    "objectId": "VYJrha4lV4",
+    "Year": 2022,
+    "Make": "Hyundai",
+    "Model": "Tucson",
+    "Category": "SUV",
+    "createdAt": "2021-04-15T13:58:58.377Z",
+    "updatedAt": "2021-04-15T13:58:58.377Z"
+  }
+]
+}

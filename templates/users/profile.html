@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+{% load humanize %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Hi {{user.username}}</h1>
+<ul>
+    <li><a href="{% url 'my-posts' %}">Your Posts</a></li>
+    <li><a href="{% url 'profile-update' %}">Update your info</a></li>
+</ul>
+
+{% endif %}
+{% endblock%}

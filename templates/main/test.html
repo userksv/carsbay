@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block content %}
+{{post.make}}
+
+{%for img in post.post_image.all%}</p>
+
+{% thumbnail img.images "325x225" crop="center" as im %}
+<img src="{{ im.images.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+{% endthumbnail %}
+
+{% endfor %}
+<!-- <img src="{% static 'images/gt3_2.jpg'%}" alt=""> -->
+{% endblock %}
