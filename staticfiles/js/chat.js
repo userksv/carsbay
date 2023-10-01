@@ -4,7 +4,7 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `wss://carsbay.onrebder.com/chat/`;
+  const url = `wss://carsbay.onrender.com/chat/`;
   console.log(url);
   let chatSocket = new WebSocket(url);
   let intervalID;
