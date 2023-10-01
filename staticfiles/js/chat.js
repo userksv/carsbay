@@ -4,7 +4,7 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `ws://${window.location.host}/chat/`;
+  const url = `wss://${window.location.host}/chat/`;
   let chatSocket = new WebSocket(url);
   let intervalID;
   const username = document.querySelector("#json_username").textContent.trim();
@@ -41,7 +41,7 @@ function connect() {
 
     const linkToPost = document.createElement("a");
     linkToPost.target = "_blank";
-    const url = `http://${window.location.host}/post/${element.post.id}`;
+    const url = `https://${window.location.host}/post/${element.post.id}`;
     // const url = `"{\% url 'post-detail' ${element.post.id} \%}"`; this doesn't work
     linkToPost.href = url;
     linkToPost.append(
