@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 print(DEBUG)
 
 # ALLOWED_HOSTS = ['carsbay.onrender.com']
@@ -56,8 +56,8 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("onredner.com", 6379)],
-            # "hosts": [("localhost", 6379)],
+            # "hosts": [("onredner.com", 6379)],
+            "hosts": [("127.0.0.1", 6379)],
         },
     },
 }
@@ -123,7 +123,7 @@ AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
+# STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -186,23 +186,4 @@ USE_DJANGO_JQUERY = True
 # convert datatime object to int
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
-}
-######################################
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
 }
