@@ -51,14 +51,14 @@ INSTALLED_APPS = [
 ]
 
 # Channels
-REDIS_URL = os.environ('REDIS_URL')
+REDIS_URL = os.getenv('REDIS_URL')
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            # "hosts": [("localhost", 6379)],
-            "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379), ('localhost', 6379)],
+            "hosts": [("127.0.0.1", 6379)],
+            # "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379)],
         },
     },
 }
@@ -121,7 +121,6 @@ AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-
 DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 # STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
