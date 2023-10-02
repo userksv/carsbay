@@ -18,9 +18,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-print(DEBUG)
 
-# ALLOWED_HOSTS = ['carsbay.onrender.com']
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -54,10 +52,9 @@ INSTALLED_APPS = [
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            # "hosts": [("127.0.0.1", 6379)], # for development
-            # "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379)],
+            "hosts": [("127.0.0.1", 6379)],
         },
     },
 }
@@ -120,9 +117,10 @@ AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-# STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
+STATICFILES_DIRS = [BASE_DIR / "static",]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
