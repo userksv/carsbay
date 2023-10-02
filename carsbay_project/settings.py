@@ -51,13 +51,14 @@ INSTALLED_APPS = [
 ]
 
 # Channels
+REDIS_URL = os.environ('REDIS_URL')
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            # "hosts": [("onredner.com", 6379)],
-            "hosts": [("127.0.0.1", 6379)],
+            # "hosts": [("localhost", 6379)],
+            "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379), ('localhost', 6379)],
         },
     },
 }
