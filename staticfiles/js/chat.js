@@ -4,7 +4,7 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `wss://${window.location.host}/chat/`;
+  const url = `ws://${window.location.host}/chat/`;
   // const url = "ws://carsbay.onrender.com/chat/";
   console.log(url);
 
@@ -255,6 +255,10 @@ function connect() {
       }
       messageInputDom.value = "";
     };
+  };
+
+  chatSocket.onclose = function (e) {
+    console.log("Closed", e);
   };
 }
 

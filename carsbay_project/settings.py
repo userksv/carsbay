@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 print(DEBUG)
 
 # ALLOWED_HOSTS = ['carsbay.onrender.com']
@@ -123,10 +123,7 @@ AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-if DEBUG:
-    STATICFILES_DIRS = [BASE_DIR / "static"]
-
-# STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
+STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
