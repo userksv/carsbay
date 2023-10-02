@@ -71,7 +71,7 @@ class ChatConsumer(WebsocketConsumer):
 
     def connect(self):
         #### Something wrong with conversation name
-        # print("Connected!")
+        print("Connected!")
         self.user = self.scope['user']
         if self.user.is_anonymous:
             self.close()

@@ -120,8 +120,8 @@ AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-
-# STATICFILES_DIRS = [BASE_DIR / "static",]
+if DEBUG:
+    STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
