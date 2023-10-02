@@ -21,7 +21,7 @@ DEBUG = True
 print(DEBUG)
 
 # ALLOWED_HOSTS = ['carsbay.onrender.com']
-ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1:8000', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -55,10 +55,10 @@ REDIS_URL = os.getenv('REDIS_URL')
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
         "CONFIG": {
-            # "hosts": [("127.0.0.1", 6379)],
-            "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379)],
+            # "hosts": [("127.0.0.1", 6379)], # for development 
+            # "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379)],
         },
     },
 }

@@ -4,7 +4,8 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `ws://${window.location.host}/chat/`;
+  const protocol = window.location.protocol == "https:" ? "wss" : "ws";
+  const url = `${protocol}://${window.location.host}/chat/`;
   // const url = "ws://carsbay.onrender.com/chat/";
   console.log(url);
 
