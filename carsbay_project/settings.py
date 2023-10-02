@@ -17,9 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -54,7 +54,8 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("onredner.com", 6379)],
+            # "hosts": [("onredner.com", 6379)],
+            "hosts": [("localhost", 6379)],
         },
     },
 }
@@ -122,6 +123,8 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 if DEBUG:
     STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -157,9 +160,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -187,4 +187,23 @@ USE_DJANGO_JQUERY = True
 # convert datatime object to int
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
+}
+######################################
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
 }

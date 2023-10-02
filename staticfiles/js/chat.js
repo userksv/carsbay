@@ -4,7 +4,9 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `wss://${window.location.host}/chat/`;
+  const url = `ws://${window.location.host}/chat/`;
+  console.log(url);
+
   let chatSocket = new WebSocket(url);
   let intervalID;
   const username = document.querySelector("#json_username").textContent.trim();
@@ -256,7 +258,6 @@ function connect() {
 }
 
 const userId = document.getElementById("json_username").textContent.trim();
-console.log(userId);
 if (userId) {
   connect();
 }
