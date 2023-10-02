@@ -51,13 +51,12 @@ INSTALLED_APPS = [
 ]
 
 # Channels
-REDIS_URL = os.getenv('REDIS_URL')
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
         "CONFIG": {
-            # "hosts": [("127.0.0.1", 6379)], # for development 
+            # "hosts": [("127.0.0.1", 6379)], # for development
             # "hosts": [("redis://red-ckda4jljhfbs73a9c5m0", 6379)],
         },
     },
