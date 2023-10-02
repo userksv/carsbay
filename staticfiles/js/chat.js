@@ -4,7 +4,7 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
-  const url = `ws://${window.location.host}/chat/`;
+  const url = `wss://${window.location.host}/chat/`;
   // const url = "ws://carsbay.onrender.com/chat/";
   console.log(url);
 
@@ -44,7 +44,7 @@ function connect() {
 
     const linkToPost = document.createElement("a");
     linkToPost.target = "_blank";
-    const url = `https://${window.location.host}/post/${element.post.id}`;
+    const url = `http://${window.location.host}/post/${element.post.id}`;
     // const url = `"{\% url 'post-detail' ${element.post.id} \%}"`; this doesn't work
     linkToPost.href = url;
     linkToPost.append(
