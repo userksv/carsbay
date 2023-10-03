@@ -20,6 +20,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+
+REDIS_URL = '127.0.0.1'
+
 if not DEBUG:
     REDIS_URL = os.getenv('REDIS_URL')
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -58,7 +61,7 @@ INSTALLED_APPS = [
 ]
 
 # REDIS_URL = os.getenv('REDIS_URL')
-REDIS_URL = '127.0.0.1'
+
 # Channels
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
