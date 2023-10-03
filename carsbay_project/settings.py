@@ -20,6 +20,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+if not DEBUG:
+    REDIS_URL = os.getenv('REDIS_URL')
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_HSTS_SECONDS = 3600
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+    SECURE_HSTS_PRELOAD=True
 
 # Application definition
 
@@ -48,13 +57,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# REDIS_URL = os.getenv('REDIS_URL')
+REDIS_URL = '127.0.0.1'
 # Channels
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [(REDIS_URL, 6379)],
         },
     },
 }
@@ -119,7 +130,7 @@ AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-# STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

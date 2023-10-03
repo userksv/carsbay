@@ -260,6 +260,7 @@ function connect() {
 
   chatSocket.onclose = function (e) {
     console.log("Closed", e);
+    console.log("Did you forget to login?)");
   };
 }
 
