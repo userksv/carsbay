@@ -8,9 +8,11 @@ from asgiref.sync import async_to_sync
 from django.contrib.auth import get_user_model
 from channels.generic.websocket import WebsocketConsumer
 from channels.db import database_sync_to_async
-from chat.views import chat_view
-from collections import OrderedDict
+import boto3
+import os
 User = get_user_model()
+# Whit out script doesn't work. Solution get from ChatGPT # boto3 docs very hard to understand for me (:
+boto3.setup_default_session(region_name=os.getenv('AWS_S3_REGION_NAME'))
 
 class ChatConsumer(WebsocketConsumer):
     def __init__(self, *args, **kwargs):
@@ -23,6 +25,23 @@ class ChatConsumer(WebsocketConsumer):
     def get_post(self, post_id):
         return Post.objects.get(id=post_id)
     
+    def get_post_image_from_s3(self, key):
+        """
+        Get generated url from s3 bucket for frontend 
+        """
+        bucket_name = os.getenv('AWS_STORAGE_BUCKET_NAME')
+        s3 = boto3.client('s3')
+        # Learn this
+        url = s3.generate_presigned_url(
+        'get_object',
+        Params={
+            'Bucket': bucket_name,
+            'Key': key
+            },
+            HttpMethod='GET'
+        )
+        return url
+
     def get_conversations(self, user):
         result = []
         # Here I have a bug, problem is that if there two users with names like 'mike' and 'mike1123'
@@ -40,12 +59,11 @@ class ChatConsumer(WebsocketConsumer):
 
             # Get messages with read property False
             count = Message.objects.filter(to_user=self.scope['user'], read=False, conversation=conv[('id')]).count()
-
-            # get post images for conversations and unread messages count
-            image = str(PostImage.objects.filter(post=int(conv['post']['id'])).first().get_post_image())
+            image = self.get_post_image_from_s3(str(PostImage.objects.filter(post=int(conv['post']['id'])).first().get_post_image()))
 
             # Add to serialized conversations
             conversations[i].update({'unread_count': count, 'image': image})
+        print(conversations)
         return conversations
 
     def get_current_conversation(self, name):
@@ -117,7 +135,7 @@ class ChatConsumer(WebsocketConsumer):
         if msg_type == 'get_conversations':
             # Getting all conversations for current user
             conversations = self.get_conversations(self.scope['user'])
-            print(conversations)
+            # print(conversations)
             self.send(json.dumps({
                 'type': 'get_conversations',
                 'conversations': conversations,

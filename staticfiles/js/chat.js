@@ -6,9 +6,6 @@ function connect() {
   );
   const protocol = window.location.protocol == "https:" ? "wss" : "ws";
   const url = `${protocol}://${window.location.host}/chat/`;
-  // const url = "ws://carsbay.onrender.com/chat/";
-  console.log(url);
-
   let chatSocket = new WebSocket(url);
   let intervalID;
   const username = document.querySelector("#json_username").textContent.trim();
@@ -52,8 +49,10 @@ function connect() {
       `${element.post.make["make"]} ${element.post.model["name"]}`
     );
 
+    const awsLink = `${element.image}`;
+    console.log(awsLink);
     const image = document.createElement("img");
-    image.src = `/media/${element.image}`;
+    image.src = awsLink;
     document.querySelector(".contact-profile").append(image, linkToPost);
   }
 
@@ -109,7 +108,7 @@ function connect() {
     const id = `${conversation.id}`;
     const price = `${conversation.post["price"]} ₩`;
     // const imgUrl = `{% url '${conversation.image}'%}`;
-    const imgUrl = `/media/${conversation.image}`;
+    const imgUrl = `${conversation.image}`;
     //parent
     const img = document.createElement("img");
     img.src = imgUrl;

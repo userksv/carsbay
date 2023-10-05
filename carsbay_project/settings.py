@@ -21,7 +21,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-REDIS_URL = '127.0.0.1'
+REDIS_URL = f'127.0.0.1', '6379'
 
 if not DEBUG:
     REDIS_URL = os.getenv('REDIS_URL')
@@ -116,22 +116,21 @@ WSGI_APPLICATION = "carsbay_project.wsgi.application"
 #     }
 # }
 
+# For production
 DATABASES = {
     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / 'media'
-
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "staticfiles/"

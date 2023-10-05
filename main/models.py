@@ -73,7 +73,7 @@ class PostImage(models.Model):
     
     def get_post_image(self):
         return self.images
-    
+ 
     def save(self, *args, **kwargs):
         if self.images:
             self.convert_to_jpeg()
