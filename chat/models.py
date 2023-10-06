@@ -3,6 +3,9 @@ from main.models import Post
 from django.db import models
 import uuid
 from django.urls import reverse
+import os
+import boto3
+boto3.setup_default_session(region_name=os.getenv('AWS_S3_REGION_NAME'))
 
 User = get_user_model()
 

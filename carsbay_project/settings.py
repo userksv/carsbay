@@ -20,19 +20,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
-REDIS_URL = f'127.0.0.1', '6379'
-
-if not DEBUG:
-    REDIS_URL = os.getenv('REDIS_URL')
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_HSTS_SECONDS = 3600
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-    SECURE_HSTS_PRELOAD=True
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -63,6 +50,10 @@ INSTALLED_APPS = [
 # REDIS_URL = os.getenv('REDIS_URL')
 
 # Channels
+REDIS_URL = f'127.0.0.1', '6379'
+if not DEBUG:
+    REDIS_URL = os.getenv('REDIS_URL')
+
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
@@ -107,24 +98,22 @@ WSGI_APPLICATION = "carsbay_project.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# FOR PRODUCTION SWITCH TO POSTGRESE
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
-# For production
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+
+if not DEBUG:
+    DATABASES = {
+            "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        }
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -194,3 +183,14 @@ USE_DJANGO_JQUERY = True
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
 }
+
+if not DEBUG:
+    # Uncomment in production!!!
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # SECURE_HSTS_SECONDS = 3600
+    # SECURE_SSL_REDIRECT = True
+    # SESSION_COOKIE_SECURE = True
+    # CSRF_COOKIE_SECURE = True
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+    # SECURE_HSTS_PRELOAD=True
+    ...
