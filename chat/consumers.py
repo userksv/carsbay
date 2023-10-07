@@ -36,14 +36,12 @@ class ChatConsumer(WebsocketConsumer):
         
         conversations = ConversationSerializer(result, many=True).data
         for i, conv in enumerate(conversations):
-
             # Get messages with read property False
             count = Message.objects.filter(to_user=self.scope['user'], read=False, conversation=conv[('id')]).count()
             image = str(PostImage.objects.filter(post=int(conv['post']['id'])).first().get_s3_image_link())
-
-            # Add to serialized conversations
-            conversations[i].update({'unread_count': count, 'image': image})
-        print(conversations)
+            messages = self.get_messages(conv[('name')])
+            # Add to serialized conversations 
+            conversations[i].update({'unread_count': count, 'image': image, 'messages': messages})
         return conversations
 
     def get_current_conversation(self, name):

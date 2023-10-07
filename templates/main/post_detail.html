@@ -82,12 +82,8 @@
 {{post.id|json_script:"json_post_id"}}
 
 <div class="offcanvas offcanvas-end" id="demo">
-    <div class="offcanvas-header">
-        <h1 class="offcanvas-title">Messagess</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div>
-        {% include 'chat/chat.html'%}
+    <div class="offcanvas-body" id="chat-page">
+        {% include 'chat/chat.html' %}
     </div>
 </div>
 {% endblock %}

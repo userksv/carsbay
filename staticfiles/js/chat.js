@@ -1,3 +1,5 @@
+const chatIcon = document.querySelector(".chat-icon");
+const windowWidth = window.innerWidth;
 function connect() {
   const chatLog = document.querySelector("#chat-log");
   const navBarMessageElement = document.getElementById("messages-navbar");
@@ -6,21 +8,37 @@ function connect() {
   );
   const protocol = window.location.protocol == "https:" ? "wss" : "ws";
   const url = `${protocol}://${window.location.host}/chat/`;
+  // const url = "ws://carsbay.onrender.com/chat/";
+  // console.log(url);
+
   let chatSocket = new WebSocket(url);
   let intervalID;
   const username = document.querySelector("#json_username").textContent.trim();
   const listUnstyled = document.querySelector("#list-conversations");
   let msgsFlag = false; // used for offCanvas
 
-  function changeOffcanvasWidth(width) {
+  function changeOffcanvasWidth() {
+    if (windowWidth <= 768) {
+      document
+        .querySelector("#demo")
+        .setAttribute(
+          "style",
+          "width: " + 100 + "% !important; visibility: visible;"
+        );
+      return;
+    }
     document
       .querySelector("#demo")
       .setAttribute(
         "style",
-        "width: " + width + "px !important; visibility: visible;"
+        "width: " + 75 + "% !important; visibility: visible;"
       );
     return;
   }
+  // clear chat-list
+  document.getElementById("close-canvas").addEventListener("click", () => {
+    document.querySelector(".chat-list").innerHTML = "";
+  });
 
   function newMessageNotification(unreadCount) {
     let title = document.getElementById("title").textContent;
@@ -33,114 +51,105 @@ function connect() {
   }
 
   function showPost(element) {
-    console.log(element.post);
-    document.querySelector(".contact-profile").innerHTML = "";
-    // console.log(element.image);
-    const price = `${element.post.price}₩`;
+    const chatHeader = document.querySelector("#chat-header");
+    const divPost = document.querySelector("#post-id");
+    chatHeader.innerHTML = "";
+    divPost.innerHTML = "";
+    const img = document.createElement("img");
+    const a = document.createElement("a");
+    const h3 = document.createElement("h3");
     const p = document.createElement("p");
-    p.append(price);
 
-    const linkToPost = document.createElement("a");
-    linkToPost.target = "_blank";
-    const url = `http://${window.location.host}/post/${element.post.id}`;
-    // const url = `"{\% url 'post-detail' ${element.post.id} \%}"`; this doesn't work
-    linkToPost.href = url;
-    linkToPost.append(
-      `${element.post.make["make"]} ${element.post.model["name"]}`
-    );
-
-    const awsLink = `${element.image}`;
-    console.log(awsLink);
-    const image = document.createElement("img");
-    image.src = awsLink;
-    document.querySelector(".contact-profile").append(image, linkToPost);
+    img.className = "img-fluid custom-img img-thumbnail custom-img-header";
+    img.src = element.image;
+    a.href = `http://${window.location.host}/post/${element.post.id}`;
+    a.target = "_blank";
+    h3.textContent = `${element.post.make["make"]} ${element.post.model["name"]}`;
+    p.textContent = `${element.post.price}₩`;
+    a.append(h3);
+    chatHeader.append(img);
+    divPost.append(a, p);
   }
 
-  function messageDate(timestamp) {
-    const dateTime = new Date(Number(timestamp));
-    return `${dateTime.getHours()}:${dateTime.getMinutes()}`;
+  function timestampToTime(timestamp) {
+    const date = new Date(Number(timestamp));
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    if (hours < 12) {
+      return `${hours}:${minutes} am`;
+    }
+    return `${hours}:${minutes} pm`;
   }
 
   function displayMessages(messages) {
-    console.log(messages);
     chatLog.innerHTML = " ";
-    $(".messages").animate({ scrollTop: $(document).height() }, "fast");
+    $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
+    if (messages.length === 0) {
+      chatLog.textContent = "No messages";
+    }
     for (let i = 0; i < messages.length; i++) {
       const li = document.createElement("li");
-      // const span = document.createElement("span");
-      // span.append(messageDate(messages[i].timestamp));
-      // span.className = "message-data-time";
-
-      const message = document.createElement("p");
-      message.append(messages[i].content);
-      li.append(message);
-
+      const p = document.createElement("p");
+      const span = document.createElement("span");
+      span.className = "time";
+      p.textContent = messages[i].content;
+      span.textContent = timestampToTime(messages[i].timestamp);
       if (username == messages[i].to_user.id) {
-        li.className = "sent";
+        li.className = "sender";
       } else {
-        li.className = "replies";
+        li.className = "replay";
       }
+      li.append(p, span);
       chatLog.append(li);
     }
+    const chatbox = document.querySelector(".chatbox");
+    chatbox.classList.add("showbox");
   }
 
   function displayMessage(message) {
     // console.log(message);
     const li = document.createElement("li");
-
-    const msg = document.createElement("p");
-    msg.append(message["message"].content);
-    li.append(msg);
-
+    const p = document.createElement("p");
+    const span = document.createElement("span");
+    span.className = "time";
+    p.textContent = message["message"].content;
+    span.textContent = timestampToTime(message["message"].timestamp);
     if (username == message["message"].to_user["id"]) {
-      li.className = "sent";
+      li.className = "sender";
     } else {
-      li.className = "replies";
+      li.className = "replay";
     }
-    // auto scrolling I don't know how it works.
-    // I need to learn this later
-    $(".messages").animate({ scrollTop: $(document).height() }, "fast");
+    li.append(p, span);
+    $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
+
     chatLog.append(li);
+    showBox();
   }
 
   function displayConversation(conversation) {
-    const postName = `${conversation.post["make"].make} ${conversation.post["model"].name}`;
-    const id = `${conversation.id}`;
-    const price = `${conversation.post["price"]} ₩`;
-    // const imgUrl = `{% url '${conversation.image}'%}`;
-    const imgUrl = `${conversation.image}`;
-    //parent
+    const chatList = document.querySelector(".chat-list");
+    const a = document.createElement("a");
+    const div = document.createElement("div");
     const img = document.createElement("img");
-    img.src = imgUrl;
-    const meta = document.createElement("div");
-    meta.className = "meta";
-    const postElement = document.createElement("p");
-    postElement.setAttribute("class", "fw-light");
-    const postTextNode = document.createTextNode(postName);
-    postElement.append(postTextNode);
+    const divContent = document.createElement("div");
+    const h3 = document.createElement("h3");
+    const p = document.createElement("p");
 
-    const priceElement = document.createElement("p");
-    priceElement.className = "preview";
-    priceElement.append(price);
+    a.href = "#";
+    a.className = "d-flex align-items-center";
+    a.id = `${conversation.id}`;
+    div.className = "flex-shrink-0";
+    // change image size
+    img.src = `${conversation.image}`;
+    img.className = "img-fluid img-thumbnail custom-img-conversation";
+    divContent.className = "flex-grow-1 ms-3";
+    h3.textContent = `${conversation.post["make"].make} ${conversation.post["model"].name}`;
+    p.textContent = `${conversation.post["price"]} ₩`;
 
-    const liElement = document.createElement("li");
-    liElement.className = "contact";
-    // liElement.id = id;
-
-    const divWrap = document.createElement("div");
-    divWrap.className = "wrap";
-    divWrap.id = id;
-
-    const nameElement = document.createElement("h2");
-    nameElement.className = "name";
-
-    nameElement.append(postName);
-    meta.append(nameElement, priceElement);
-    divWrap.append(img);
-    divWrap.append(meta);
-    liElement.appendChild(divWrap);
-    listUnstyled.append(liElement);
-    showUnredMessagesStatus(conversation.unread_count, id);
+    div.append(img);
+    divContent.append(h3, p);
+    a.append(div, divContent);
+    chatList.append(a);
   }
 
   function unlockMessageInput() {
@@ -163,16 +172,16 @@ function connect() {
   if (navBarMessageElement) {
     navBarMessageElement.addEventListener("click", () => {
       chatSocket.send(JSON.stringify({ type: "get_conversations" }));
-      if (msgsFlag) {
-        changeOffcanvasWidth(900);
-      } else changeOffcanvasWidth(360);
+      // if (msgsFlag) {
+      //   changeOffcanvasWidth(75);
+      // }
     });
   }
 
   if (postDetailsMessageElement) {
     postDetailsMessageElement.addEventListener("click", () => {
       const postId = document.getElementById("json_post_id").textContent.trim();
-      changeOffcanvasWidth(900);
+      changeOffcanvasWidth();
       chatSocket.send(
         JSON.stringify({ type: "create_conversation", postId: postId })
       );
@@ -192,7 +201,7 @@ function connect() {
         break;
 
       case "get_conversations":
-        console.log(data);
+        // console.log(data);
         // clear list of conversations every time offcanvas is trigerred
         document.querySelector("#list-conversations").innerHTML = "";
         for (let i = 0; i < data.conversations.length; i++) {
@@ -201,8 +210,7 @@ function connect() {
           document
             .getElementById(`${element.id}`)
             .addEventListener("click", () => {
-              changeOffcanvasWidth(900);
-              // showPost(data.conversations[i].post.author.username);
+              changeOffcanvasWidth();
               if (intervalID) {
                 clearInterval(intervalID);
               }
@@ -259,11 +267,13 @@ function connect() {
 
   chatSocket.onclose = function (e) {
     console.log("Closed", e);
-    console.log("Did you forget to login?)");
   };
 }
-
 const userId = document.getElementById("json_username").textContent.trim();
 if (userId) {
   connect();
 }
+const chatbox = document.querySelector(".chatbox");
+chatIcon.addEventListener("click", () => {
+  chatbox.classList.remove("showbox");
+});
