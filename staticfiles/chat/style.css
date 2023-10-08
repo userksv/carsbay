@@ -117,7 +117,7 @@ message-area
 ******************************** */
 
 .message-area {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   padding: 30px 0;
   background: #f5f5f5;
