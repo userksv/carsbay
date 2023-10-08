@@ -19,6 +19,15 @@ class ChatConsumer(WebsocketConsumer):
         self.conversation = None
         self.post_id = None
 
+    def create_message(self, conversation, user, receiver, msg):
+        message, created = Message.objects.get_or_create(
+                    conversation=conversation,
+                    from_user = user,
+                    to_user = receiver,
+                    content = msg
+                    )
+        return message
+
     def get_post(self, post_id):
         return Post.objects.get(id=post_id)
 
@@ -41,11 +50,14 @@ class ChatConsumer(WebsocketConsumer):
             image = str(PostImage.objects.filter(post=int(conv['post']['id'])).first().get_s3_image_link())
             messages = self.get_messages(conv[('name')])
             # Add to serialized conversations 
-            conversations[i].update({'unread_count': count, 'image': image, 'messages': messages})
+            conversations[i].update({'unread_count': count, 'image': image})
         return conversations
 
     def get_current_conversation(self, name):
-        return Conversation.objects.get(name=name)
+        try:
+            return Conversation.objects.get(name=name)
+        except:
+            return None
     
     def get_receiver(self):
         usernames = self.conversation_name.split("__")
@@ -64,6 +76,11 @@ class ChatConsumer(WebsocketConsumer):
     def get_post_author(self, post_id):
         return Post.objects.get(id=post_id).author.username
     
+    def check_conversations(self):
+        conversations = Conversation.objects.all()
+        for conversation in conversations:
+            if Message.objects.filter(conversation=conversation).count() == 0:
+                conversation.delete()
 
     def connect(self):
         #### Something wrong with conversation name
@@ -78,8 +95,7 @@ class ChatConsumer(WebsocketConsumer):
         ##
         messages = Message.objects.filter(to_user=self.user, read=False)
         unread_count = messages.count()
-
-       
+        self.check_conversations()
         # TO DO also get converstaion!!!!!``
         self.send(json.dumps({
             'type': 'new_message_notification',
@@ -105,9 +121,10 @@ class ChatConsumer(WebsocketConsumer):
             """
             self.conversation, created = Conversation.objects.get_or_create(name=self.conversation_name, post=post)
             conversations = self.get_conversations(self.scope['user'])
+           
             self.send(json.dumps({
-                'type': 'get_conversations',
-                'conversations': conversations
+                'type': 'get_conversations', 
+                'conversations': conversations,
             }))
                 
         if msg_type == 'get_conversations':
@@ -122,10 +139,9 @@ class ChatConsumer(WebsocketConsumer):
         if msg_type == 'fetch_messages':
             # Fetching messages for current conversation
             self.conversation_name = data['conversation_name']
-            messages = self.get_messages(self.conversation_name)            
-
-            # reset unread count for current user and current conversation
             self.conversation = self.get_current_conversation(self.conversation_name)
+     
+            messages = self.get_messages(self.conversation_name)            
             messages_to_me = self.conversation.messages.filter(to_user=self.user)
             messages_to_me.update(read=True)
             
@@ -145,12 +161,7 @@ class ChatConsumer(WebsocketConsumer):
             msg = data['message']
             # Getting current conversation object in order to pass to Message model
             self.conversation = self.get_current_conversation(self.conversation_name)
-            message, created = Message.objects.get_or_create(
-                conversation=self.conversation,
-                from_user = self.user,
-                to_user = self.get_receiver(),
-                content = msg
-            )
+            message = self.create_message(self.conversation, self.user, self.get_receiver(), msg)
             message = MessageSerializer(message).data
             async_to_sync(self.channel_layer.group_send)(
                 self.conversation_name,

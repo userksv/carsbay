@@ -117,6 +117,9 @@ function connect() {
 
   function displayMessage(message) {
     // console.log(message);
+    if (chatLog.textContent === "No messages") {
+      chatLog.innerHTML = "";
+    }
     const li = document.createElement("li");
     const p = document.createElement("p");
     const span = document.createElement("span");
@@ -130,11 +133,16 @@ function connect() {
     }
     li.append(p, span);
     $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
-
     chatLog.append(li);
   }
 
+  function show_empty() {
+    chatLog.innerHTML = " ";
+    chatLog.append("You don't have any messages in this conversation!");
+  }
+
   function displayConversation(conversation) {
+    console.log(conversation);
     const a = document.createElement("a");
     const div = document.createElement("div");
     const img = document.createElement("img");
@@ -238,11 +246,13 @@ function connect() {
         break;
 
       case "fetch_messages":
+        console.log(data.message);
         displayMessages(data.message, data.username);
         msgsFlag = true;
         break;
 
       case "chat_message":
+        console.log(data);
         displayMessage(data);
         break;
       default:

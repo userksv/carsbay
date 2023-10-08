@@ -46,8 +46,8 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
 
-    def __str__(self):
-        return f"From {self.from_user.username} to {self.to_user.username}: {self.content} [{self.timestamp}][{self.conversation.id}]"
+    # def __str__(self):
+    #     return f"From {self.from_user.username} to {self.to_user.username}: {self.content} [{self.timestamp}][{self.conversation.id}]"
     
     def get_conversation(self):
         return self.conversation.id
