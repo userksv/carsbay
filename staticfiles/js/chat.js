@@ -6,6 +6,7 @@ function connect() {
   const postDetailsMessageElement = document.getElementById(
     "post-details-message"
   );
+  const chatList = document.querySelector(".chat-list");
   const protocol = window.location.protocol == "https:" ? "wss" : "ws";
   const url = `${protocol}://${window.location.host}/chat/`;
   // const url = "ws://carsbay.onrender.com/chat/";
@@ -14,8 +15,14 @@ function connect() {
   let chatSocket = new WebSocket(url);
   let intervalID;
   const username = document.querySelector("#json_username").textContent.trim();
-  const listUnstyled = document.querySelector("#list-conversations");
-  let msgsFlag = false; // used for offCanvas
+
+  function clearChatList() {
+    document
+      .getElementById("demo")
+      .addEventListener("hidden.bs.offcanvas", function () {
+        chatList.innerHTML = "";
+      });
+  }
 
   function changeOffcanvasWidth() {
     if (windowWidth <= 768) {
@@ -37,6 +44,7 @@ function connect() {
   }
   // clear chat-list
   document.getElementById("close-canvas").addEventListener("click", () => {
+    console.log("triggered!!!");
     document.querySelector(".chat-list").innerHTML = "";
   });
 
@@ -127,7 +135,6 @@ function connect() {
   }
 
   function displayConversation(conversation) {
-    const chatList = document.querySelector(".chat-list");
     const a = document.createElement("a");
     const div = document.createElement("div");
     const img = document.createElement("img");
@@ -201,9 +208,10 @@ function connect() {
         break;
 
       case "get_conversations":
-        // console.log(data);
+        console.log(data);
         // clear list of conversations every time offcanvas is trigerred
-        document.querySelector("#list-conversations").innerHTML = "";
+        // document.getElementById("chat-list").innerHTML = "";
+        clearChatList();
         for (let i = 0; i < data.conversations.length; i++) {
           const element = data.conversations[i];
           displayConversation(element);
