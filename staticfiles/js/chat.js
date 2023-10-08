@@ -82,7 +82,8 @@ function connect() {
   function timestampToTime(timestamp) {
     const date = new Date(Number(timestamp));
     const hours = date.getHours();
-    const minutes = date.getMinutes();
+    const minutes =
+      date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
     if (hours < 12) {
       return `${hours}:${minutes} am`;
     }
@@ -131,7 +132,6 @@ function connect() {
     $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
 
     chatLog.append(li);
-    showBox();
   }
 
   function displayConversation(conversation) {
@@ -281,6 +281,7 @@ const userId = document.getElementById("json_username").textContent.trim();
 if (userId) {
   connect();
 }
+// for responsive design
 const chatbox = document.querySelector(".chatbox");
 chatIcon.addEventListener("click", () => {
   chatbox.classList.remove("showbox");
