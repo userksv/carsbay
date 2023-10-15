@@ -45,11 +45,12 @@ class ChatConsumer(WebsocketConsumer):
         
         conversations = ConversationSerializer(result, many=True).data
         for i, conv in enumerate(conversations):
-            # Get messages with read property False
+            # Get messages with read property False 
             count = Message.objects.filter(to_user=self.scope['user'], read=False, conversation=conv[('id')]).count()
+            # Get post image from s3 bucket
             image = str(PostImage.objects.filter(post=int(conv['post']['id'])).first().get_s3_image_link())
-            messages = self.get_messages(conv[('name')])
-            # Add to serialized conversations 
+            # messages = self.get_messages(conv[('name')])
+            # Add count and image to serialized conversations 
             conversations[i].update({'unread_count': count, 'image': image})
         return conversations
 
@@ -67,39 +68,37 @@ class ChatConsumer(WebsocketConsumer):
                 return User.objects.get(username=username)
             
     def get_messages(self, conversation_name):
+        """
+        Get all messages for particular conversation
+        """
         conversation = self.get_current_conversation(conversation_name)
         messages = MessageSerializer(conversation.messages.all(), many=True).data
         return messages
         
-    # @database_sync_to_async
-    # learn this
-    def get_post_author(self, post_id):
-        return Post.objects.get(id=post_id).author.username
-    
     def check_conversations(self):
+        """
+        Delete conversation if there no messages
+        """
         conversations = Conversation.objects.all()
         for conversation in conversations:
             if Message.objects.filter(conversation=conversation).count() == 0:
                 conversation.delete()
 
     def connect(self):
-        #### Something wrong with conversation name
         print("Connected!")
         self.user = self.scope['user']
         if self.user.is_anonymous:
             self.close()
             return
         self.accept()
-        ##
-        # self.conversation.online.join(self.user)
-        ##
+        # Get unread messages count for user
         messages = Message.objects.filter(to_user=self.user, read=False)
         unread_count = messages.count()
+        
         self.check_conversations()
-        # TO DO also get converstaion!!!!!``
+        # Send to websocket unread_count
         self.send(json.dumps({
             'type': 'new_message_notification',
-            'message': 'It is working!!!',
             'unread_count': unread_count,
             }))
     
@@ -110,15 +109,10 @@ class ChatConsumer(WebsocketConsumer):
         if msg_type == 'create_conversation':
             # post_id needs for grabbing post author creator
             self.post_id = data['postId']
-            # Check if user is authenticted otherwise don't create conversation!!!!!!!!!!!!!!!
             post = self.get_post(self.post_id)
             post_author = post.author
             self.conversation_name = f'{self.user}__{post_author}__{post.id}'
-            """
-            # Add to Conversation model field (participants) and add current_user, post_author
-            # There must only two participants 
-            self.conversation.participants.add(self.user, post_author)
-            """
+            # Create new conversation
             self.conversation, created = Conversation.objects.get_or_create(name=self.conversation_name, post=post)
             conversations = self.get_conversations(self.scope['user'])
            
@@ -141,7 +135,8 @@ class ChatConsumer(WebsocketConsumer):
             self.conversation_name = data['conversation_name']
             self.conversation = self.get_current_conversation(self.conversation_name)
      
-            messages = self.get_messages(self.conversation_name)            
+            messages = self.get_messages(self.conversation_name)
+            # Reset unread_count for current conversation
             messages_to_me = self.conversation.messages.filter(to_user=self.user)
             messages_to_me.update(read=True)
             
@@ -171,9 +166,6 @@ class ChatConsumer(WebsocketConsumer):
                     "message": message
                 },
             )
-    
-    def unread_count(self, event):
-        self.send(json.dumps(event))
 
     def new_message_notification(self, event):
         self.send(json.dumps(event))
@@ -191,6 +183,3 @@ class ChatConsumer(WebsocketConsumer):
     def disconnect(self, close_code):
         # Leave room group
         print(close_code)
-
-class NotificationConsumer(WebsocketConsumer):
-    ...

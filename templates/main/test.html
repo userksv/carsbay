@@ -1,16 +1,11 @@
 {% extends 'main/base.html' %}
-{% load static %}
-{% load thumbnail %}
-
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 {% block content %}
-{{post.make}}
-
-{%for img in post.post_image.all%}</p>
-
-{% thumbnail img.images "325x225" crop="center" as im %}
-<img src="{{ im.images.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
-{% endthumbnail %}
-
-{% endfor %}
-<!-- <img src="{% static 'images/gt3_2.jpg'%}" alt=""> -->
-{% endblock %}
+<div class="container">
+    <div class="flex d-flex">
+        <input type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" id="imageInput">
+        <output id="imageOutput">Output</output>
+    </div>
+</div>
+{% endblock%}

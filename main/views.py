@@ -10,7 +10,7 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from main.forms import PostForm, PostUpdateForm, PostImageForm, ExampleForm
+from main.forms import PostForm, PostUpdateForm, PostImageForm
 from django.urls import reverse
 
 
@@ -119,3 +119,6 @@ class PostDeleteView(
 
 def about(request):
     return render(request, "main/about.html", {"title": "About"})
+
+def test(request):
+    return render(request, 'main/test.html')
