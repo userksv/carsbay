@@ -90,26 +90,29 @@ function connect() {
     return `${hours}:${minutes} pm`;
   }
 
+  function showWhenMessageHaveSent() {
+    return 0;
+  }
   function displayMessages(messages) {
-    chatLog.innerHTML = " ";
+    chatLog.innerHTML = "";
+    console.log(messages);
     $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
     if (messages.length === 0) {
       chatLog.textContent = "No messages";
     }
     for (let i = 0; i < messages.length; i++) {
-      const li = document.createElement("li");
-      const p = document.createElement("p");
-      const span = document.createElement("span");
-      span.className = "time";
-      p.textContent = messages[i].content;
-      span.textContent = timestampToTime(messages[i].timestamp);
       if (username == messages[i].to_user.id) {
-        li.className = "sender";
+        msg = `<li class="sender">
+          <p>${messages[i].content}</p>
+          <span class="time">${timestampToTime(messages[i].timestamp)}</span>
+        </li>`;
       } else {
-        li.className = "replay";
+        msg = `<li class="replay">
+          <p>${messages[i].content}</p>
+          <span class="time">${timestampToTime(messages[i].timestamp)}</span>
+        </li>`;
       }
-      li.append(p, span);
-      chatLog.append(li);
+      chatLog.innerHTML += msg;
     }
     const chatbox = document.querySelector(".chatbox");
     chatbox.classList.add("showbox");
@@ -120,20 +123,23 @@ function connect() {
     if (chatLog.textContent === "No messages") {
       chatLog.innerHTML = "";
     }
-    const li = document.createElement("li");
-    const p = document.createElement("p");
-    const span = document.createElement("span");
-    span.className = "time";
-    p.textContent = message["message"].content;
-    span.textContent = timestampToTime(message["message"].timestamp);
     if (username == message["message"].to_user["id"]) {
-      li.className = "sender";
+      msg = `<li class="sender">
+          <p>${message["message"].content}</p>
+          <span class="time">${timestampToTime(
+            message["message"].timestamp
+          )}</span>
+        </li>`;
     } else {
-      li.className = "replay";
+      msg = `<li class="replay">
+          <p>${message["message"].content}</p>
+          <span class="time">${timestampToTime(
+            message["message"].timestamp
+          )}</span>
+        </li>`;
     }
-    li.append(p, span);
     $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
-    chatLog.append(li);
+    chatLog.innerHTML += msg;
   }
 
   function show_empty() {
@@ -142,6 +148,7 @@ function connect() {
   }
 
   function displayConversation(conversation) {
+    console.log(conversation);
     console.log(conversation);
     const a = document.createElement("a");
     const div = document.createElement("div");
@@ -226,6 +233,7 @@ function connect() {
           document
             .getElementById(`${element.id}`)
             .addEventListener("click", () => {
+              /// EventListener does not work
               changeOffcanvasWidth();
               if (intervalID) {
                 clearInterval(intervalID);
