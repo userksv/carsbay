@@ -1,4 +1,3 @@
-import mimetypes
 import dj_database_url
 from pathlib import Path
 import os
@@ -186,10 +185,11 @@ REST_FRAMEWORK = {
 
 if not DEBUG:
     # Uncomment in production!!!
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_HSTS_SECONDS = 3600
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-    SECURE_HSTS_PRELOAD=True
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # SECURE_HSTS_SECONDS = 3600
+    # SECURE_SSL_REDIRECT = True
+    # SESSION_COOKIE_SECURE = True
+    # CSRF_COOKIE_SECURE = True
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+    # SECURE_HSTS_PRELOAD=True
+    ...
