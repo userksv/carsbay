@@ -6,11 +6,12 @@ from sorl.thumbnail import get_thumbnail, ImageField
 from smart_selects.db_fields import ChainedForeignKey
 from PIL import Image 
 from django.core.files.uploadedfile import InMemoryUploadedFile
-import io
+import io, os
+import boto3
 
+boto3.setup_default_session(region_name=os.getenv('AWS_S3_REGION_NAME'))
 
 # Create your models here.
-
 class Brand(models.Model):
     make = models.CharField(max_length=128)
     def __str__(self) -> str:
@@ -70,10 +71,25 @@ class PostImage(models.Model):
 
     def __str__(self) -> str:
         return str(f'{self.post.make} {self.post.model}')
-    
-    def get_post_image(self):
-        return self.images
-    
+
+    def get_s3_image_link(self):
+        """
+        Getting signed link to image for frontend
+        """
+        bucket_name = os.getenv('AWS_STORAGE_BUCKET_NAME')
+        s3 = boto3.client('s3')
+        key = str(self.images)
+        # Learn this
+        url = s3.generate_presigned_url(
+        'get_object',
+        Params={
+            'Bucket': bucket_name,
+            'Key': key
+            },
+            HttpMethod='GET'
+        )
+        return url
+ 
     def save(self, *args, **kwargs):
         if self.images:
             self.convert_to_jpeg()
@@ -97,3 +113,7 @@ class PostImage(models.Model):
                 len(output.getvalue()),
                 None
             )
+    
+    def convert_heic_to_jpg(self):
+        ...
+        

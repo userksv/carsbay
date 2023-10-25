@@ -1,4 +1,3 @@
-import mimetypes
 import dj_database_url
 from pathlib import Path
 import os
@@ -17,10 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,13 +46,19 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# REDIS_URL = os.getenv('REDIS_URL')
+
 # Channels
+REDIS_URL = f'127.0.0.1', '6379'
+if not DEBUG:
+    REDIS_URL = os.getenv('REDIS_URL')
+
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [(REDIS_URL)],
         },
     },
 }
@@ -68,7 +72,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",    
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "carsbay_project.urls"
@@ -94,18 +97,22 @@ WSGI_APPLICATION = "carsbay_project.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# FOR PRODUCTION SWITCH TO POSTGRESE
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
+
+if not DEBUG:
+    DATABASES = {
+            "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        }
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -113,18 +120,9 @@ DATABASES = {
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / 'media'
 
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
-
-STATICFILES_DIRS = [BASE_DIR / "static",]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -150,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "Asia/Seoul"
+TIME_ZONE = os.getenv('TIME_ZONE')
 
 USE_I18N = True
 
@@ -184,3 +182,14 @@ USE_DJANGO_JQUERY = True
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
 }
+
+if not DEBUG:
+    # Uncomment in production!!!
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # SECURE_HSTS_SECONDS = 3600
+    # SECURE_SSL_REDIRECT = True
+    # SESSION_COOKIE_SECURE = True
+    # CSRF_COOKIE_SECURE = True
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+    # SECURE_HSTS_PRELOAD=True
+    ...

@@ -3,6 +3,9 @@ from main.models import Post
 from django.db import models
 import uuid
 from django.urls import reverse
+import os
+import boto3
+boto3.setup_default_session(region_name=os.getenv('AWS_S3_REGION_NAME'))
 
 User = get_user_model()
 
@@ -43,8 +46,8 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
 
-    def __str__(self):
-        return f"From {self.from_user.username} to {self.to_user.username}: {self.content} [{self.timestamp}][{self.conversation.id}]"
+    # def __str__(self):
+    #     return f"From {self.from_user.username} to {self.to_user.username}: {self.content} [{self.timestamp}][{self.conversation.id}]"
     
     def get_conversation(self):
         return self.conversation.id
