@@ -17,6 +17,7 @@ from django.urls import reverse
 # Create your views here.
 
 class PostView(ListView):
+    paginate_by = 8
     model = Post
     template_name = "main/home.html"
     context_object_name = "posts"
