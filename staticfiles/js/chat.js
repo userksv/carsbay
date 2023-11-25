@@ -1,5 +1,6 @@
 const chatIcon = document.querySelector(".chat-icon");
 const windowWidth = window.innerWidth;
+
 function connect() {
   const chatLog = document.querySelector("#chat-log");
   const navBarMessageElement = document.getElementById("messages-navbar");
@@ -7,13 +8,14 @@ function connect() {
     "post-details-message"
   );
   const chatList = document.querySelector(".chat-list");
+  // contruct url depending on protocol
   const protocol = window.location.protocol == "https:" ? "wss" : "ws";
   const url = `${protocol}://${window.location.host}/chat/`;
-  // const url = "ws://carsbay.onrender.com/chat/";
-  // console.log(url);
 
   let chatSocket = new WebSocket(url);
   let intervalID;
+
+  // userId contains user id from 'main/base.html' if user is authenticated
   const username = document.querySelector("#json_username").textContent.trim();
 
   function clearChatList() {
@@ -44,7 +46,6 @@ function connect() {
   }
   // clear chat-list
   document.getElementById("close-canvas").addEventListener("click", () => {
-    console.log("triggered!!!");
     document.querySelector(".chat-list").innerHTML = "";
   });
 
@@ -59,6 +60,7 @@ function connect() {
   }
 
   function showPost(element) {
+    // shows post at the top of a chat-box
     const chatHeader = document.querySelector("#chat-header");
     const divPost = document.querySelector("#post-id");
     chatHeader.innerHTML = "";
@@ -91,11 +93,13 @@ function connect() {
   }
 
   function showWhenMessageHaveSent() {
+    // TODO
     return 0;
   }
+
   function displayMessages(messages) {
+    // inserts messages to chat-box
     chatLog.innerHTML = "";
-    console.log(messages);
     $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
     if (messages.length === 0) {
       chatLog.textContent = "No messages";
@@ -119,7 +123,7 @@ function connect() {
   }
 
   function displayMessage(message) {
-    // console.log(message);
+    // appends single message to chat-box
     if (chatLog.textContent === "No messages") {
       chatLog.innerHTML = "";
     }
@@ -148,8 +152,7 @@ function connect() {
   }
 
   function displayConversation(conversation) {
-    console.log(conversation);
-    console.log(conversation);
+    // displays conversations in the chat (side panel)
     const a = document.createElement("a");
     const div = document.createElement("div");
     const img = document.createElement("img");
@@ -178,6 +181,7 @@ function connect() {
     document.querySelector("#chat-message-input").disabled = false;
     document.querySelector("#chat-message-submit").disabled = false;
   }
+
   // Complete this functionality
   function showUnredMessagesStatus(unreadCount = false, id) {
     if (unreadCount) {
@@ -209,6 +213,7 @@ function connect() {
       );
     });
   }
+
   chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
     const message_type = data["type"];
@@ -223,7 +228,7 @@ function connect() {
         break;
 
       case "get_conversations":
-        console.log(data);
+        // console.log(data);
         // clear list of conversations every time offcanvas is trigerred
         // document.getElementById("chat-list").innerHTML = "";
         clearChatList();
@@ -254,7 +259,6 @@ function connect() {
         break;
 
       case "fetch_messages":
-        console.log(data.message);
         displayMessages(data.message, data.username);
         msgsFlag = true;
         break;
@@ -295,6 +299,8 @@ function connect() {
     console.log("Closed", e);
   };
 }
+
+// userId contains user id from 'main/base.html' if user is authenticated
 const userId = document.getElementById("json_username").textContent.trim();
 if (userId) {
   connect();
