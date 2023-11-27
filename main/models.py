@@ -59,9 +59,6 @@ class Post(models.Model):
     
     def get_image(self):
         return PostImage.objects.filter(post=self).first()
-    
-    # def get_absolute_url(self):
-    #     return reverse('post-detail', kwargs={'pk':self.pk})
 
 
 class PostImage(models.Model):

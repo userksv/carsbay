@@ -118,6 +118,3 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixi
 
 def about(request):
     return render(request, "main/about.html", {"title": "About"})
-
-def test(request):
-    return render(request, 'main/test.html')
