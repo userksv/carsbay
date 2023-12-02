@@ -1,9 +1,7 @@
 from django import forms
 from .models import Post, PostImage, Brand, City
-# from dynamic_forms import DynamicField, DynamicFormMixin
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, HTML, Div, Row, Column
-from crispy_forms.bootstrap import InlineRadios
 import datetime
 
 class PostImageForm(forms.ModelForm):

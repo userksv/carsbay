@@ -17,6 +17,7 @@ from django.urls import reverse
 # Create your views here.
 
 class PostView(ListView):
+    paginate_by = 8
     model = Post
     template_name = "main/home.html"
     context_object_name = "posts"
@@ -93,9 +94,7 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class PostDeleteView(
-    UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, DeleteView
-):
+class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Post
     template_name = "main/post_del_confirm.html"
 
@@ -119,6 +118,3 @@ class PostDeleteView(
 
 def about(request):
     return render(request, "main/about.html", {"title": "About"})
-
-def test(request):
-    return render(request, 'main/test.html')

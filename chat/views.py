@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from main.models import PostImage
 
-# this view only for testing
+# this views only for testing
 def room1(request):
     return render(request, 'chat/chat1.html')
 
