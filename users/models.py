@@ -18,8 +18,7 @@ class Profile(models.Model):
         super().save(*args, **kwargs) #first saving our form than resize image
 
         image_file = self.image  # Your ImageField
-        with default_storage.open(image_file.name) as file:
-            # Do something with the file
+        with default_storage.open(image_file.name) as file: 
             img = Image.open(file)
             if img.width > 300 or img.height > 300:
                 output_size = (300, 300)
