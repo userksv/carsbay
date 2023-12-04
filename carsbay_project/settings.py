@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(" ")
 
 # Application definition
 
@@ -47,12 +47,32 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-REDIS_URL = os.getenv('REDIS_URL')
+# REDIS_URL = os.getenv('REDIS_URL')
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+        # "LOCATION": 'redis://redis:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
 
 # Channels
-REDIS_URL = f'127.0.0.1', '6379'
-if not DEBUG:
-    REDIS_URL = os.getenv('REDIS_URL')
+# Don't forget to start redis-server
+
+# for local development
+# ????
+# REDIS_URL = f'127.0.0.1', '6379'
+
+# for docker connection inside container
+# this is the reason I couldn't connect to redis inside a docker container
+REDIS_URL = f'redis', '6379'
+
+# if not DEBUG:
+#     REDIS_URL = os.getenv('REDIS_URL')
 
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
@@ -106,15 +126,28 @@ DATABASES = {
     }
 }
 
+# PostgreSQL
+
 if not DEBUG:
+    # DATABASES = {
+    #         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    #     }
     DATABASES = {
-            "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-        }
+        "default": {
+            "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+            "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+            "USER": os.environ.get("SQL_USER", "user"),
+            "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+            "HOST": os.environ.get("SQL_HOST", "localhost"),
+            "PORT": os.environ.get("SQL_PORT", "5432"),
+    }
+    }
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
     DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -190,12 +223,15 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
 }
 
+CSRF_TRUSTED_ORIGINS = ["http://localhost:1337"]
+
 if not DEBUG:
     # Uncomment in production!!!
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_HSTS_SECONDS = 3600
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-    SECURE_HSTS_PRELOAD=True
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # SECURE_HSTS_SECONDS = 3600
+    # SECURE_SSL_REDIRECT = True
+    # SESSION_COOKIE_SECURE = True
+    # CSRF_COOKIE_SECURE = True
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+    # SECURE_HSTS_PRELOAD=True
+    ...
