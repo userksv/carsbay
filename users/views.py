@@ -31,7 +31,12 @@ def register(request):
 
 @login_required
 def profile(request):
-    context = {}
+    author_id = request.user.id
+    posts = Post.objects.filter(author=author_id)
+    context = {
+        'posts': posts,
+        'title': 'Profile page',
+    }
     return render(request, 'users/profile.html', context)
 
 @login_required
