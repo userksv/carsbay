@@ -4,8 +4,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# mimetypes.add_type("text/css", ".css", True)
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,12 +45,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-REDIS_URL = os.getenv('REDIS_URL')
 
 # Channels
-REDIS_URL = f'127.0.0.1', '6379'
-if not DEBUG:
-    REDIS_URL = os.getenv('REDIS_URL')
+REDIS_URL = f'redis', '6379'
 
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
@@ -107,9 +102,18 @@ DATABASES = {
 }
 
 if not DEBUG:
-    DATABASES = {
-            "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-        }
+    # DATABASES = {
+    #     # "default": dj_database_url.parse(os.environ.get("DATABASE_URL")) # render.com
+    #     "default": 
+    #     {
+    #         "ENGINE":   "django.db.backends.postgresql_psycopg2",
+    #         "NAME":     os.environ['DB_NAME'],
+    #         "USER":     os.environ['DB_USER'],
+    #         "PASSWORD": os.environ['DB_PASS'],
+    #         "HOST":     os.environ['DB_HOST'],
+    #         "PORT":     os.environ['DB_PORT'],
+    #     }
+    # }
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
@@ -124,7 +128,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "staticfiles/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -175,7 +179,7 @@ LOGIN_URL = "login"
 
 # Email settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = os.getenv('SERVER_HOST')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('SERVER_EMAIL')
@@ -190,12 +194,12 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
 }
 
-if not DEBUG:
-    # Uncomment in production!!!
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_HSTS_SECONDS = 3600
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-    SECURE_HSTS_PRELOAD=True
+# if not DEBUG:
+#     # Uncomment in production!!!
+#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#     SECURE_HSTS_SECONDS = 3600
+#     SECURE_SSL_REDIRECT = True
+#     SESSION_COOKIE_SECURE = True
+#     CSRF_COOKIE_SECURE = True
+#     SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+#     SECURE_HSTS_PRELOAD=True

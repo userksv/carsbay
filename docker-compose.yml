@@ -1,0 +1,17 @@
+services:
+  # Django
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+      - static_volume:/code/staticfiles
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+  # Redis
+  redis:
+    image: "redis:alpine"
+volumes:
+  static_volume:
