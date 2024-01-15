@@ -2,6 +2,8 @@ import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -102,18 +104,17 @@ DATABASES = {
 }
 
 if not DEBUG:
-    # DATABASES = {
-    #     # "default": dj_database_url.parse(os.environ.get("DATABASE_URL")) # render.com
-    #     "default": 
-    #     {
-    #         "ENGINE":   "django.db.backends.postgresql_psycopg2",
-    #         "NAME":     os.environ['DB_NAME'],
-    #         "USER":     os.environ['DB_USER'],
-    #         "PASSWORD": os.environ['DB_PASS'],
-    #         "HOST":     os.environ['DB_HOST'],
-    #         "PORT":     os.environ['DB_PORT'],
-    #     }
-    # }
+    DATABASES = {
+        "default": 
+        {
+            "ENGINE":   "django.db.backends.postgresql_psycopg2",
+            "NAME":     os.environ['DB_NAME'],
+            "USER":     os.environ['DB_USER'],
+            "PASSWORD": os.environ['DB_PASS'],
+            "HOST":     os.environ['DB_HOST'],
+            "PORT":     os.environ['DB_PORT'],
+        }
+    }
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
@@ -126,8 +127,8 @@ if not DEBUG:
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / 'media'
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_URL = "staticfiles/"
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_URL = "/staticfiles/"
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Password validation
@@ -194,12 +195,12 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
 }
 
-# if not DEBUG:
-#     # Uncomment in production!!!
-#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#     SECURE_HSTS_SECONDS = 3600
-#     SECURE_SSL_REDIRECT = True
-#     SESSION_COOKIE_SECURE = True
-#     CSRF_COOKIE_SECURE = True
-#     SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-#     SECURE_HSTS_PRELOAD=True
+if not DEBUG:
+    # Uncomment in production!!!
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_HSTS_SECONDS = 3600
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+    SECURE_HSTS_PRELOAD=True

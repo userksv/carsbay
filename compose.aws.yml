@@ -1,10 +1,9 @@
 services:
   # Nginx
   nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile.dev
+    build: ./nginx
     container_name: nginx
+    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:nginx
     volumes:
       - static_volume:/code/staticfiles
       - media_volume:/code/media
@@ -15,10 +14,9 @@ services:
 
   # Django
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
+    build: .
     container_name: django
+    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:web
     command: /start-django
     volumes:
       - .:/code
