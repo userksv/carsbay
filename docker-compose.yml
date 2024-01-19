@@ -12,6 +12,7 @@ services:
       - "80:80"
     depends_on:
       - web
+      - websocket
 
   # Django
   web:
@@ -28,9 +29,25 @@ services:
       - 8000
     depends_on:
       - redis
+
+  # Websocket
+  websocket:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: websocket
+    command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
+    volumes:
+      - .:/code
+    expose:
+      - 9000
+    depends_on:
+      - redis
+
   # Redis
   redis:
     image: "redis:alpine"
+
 volumes:
   static_volume:
   media_volume:

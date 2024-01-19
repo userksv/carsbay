@@ -26,6 +26,19 @@ services:
       - 8000
     depends_on:
       - redis
+
+  # Websocket
+  websocket:
+    build: .
+    container_name: websocket
+    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:websocket
+    command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
+    volumes:
+      - .:/code
+    expose:
+      - 9000
+    depends_on:
+      - redis
   # Redis
   redis:
     image: "redis:alpine"

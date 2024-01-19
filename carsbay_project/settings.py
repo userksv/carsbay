@@ -1,4 +1,3 @@
-import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -49,7 +48,7 @@ INSTALLED_APPS = [
 
 
 # Channels
-REDIS_URL = f'redis', '6379'
+REDIS_URL = os.environ['REDIS_URL']
 
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
