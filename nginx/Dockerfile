@@ -1,4 +1,4 @@
-FROM --platform="linux/amd64" nginxproxy/nginx
+FROM nginxproxy/nginx
 
 RUN rm /etc/nginx/conf.d/default.conf
 COPY vhost.d/default /etc/nginx/vhost.d/default
