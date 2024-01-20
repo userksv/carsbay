@@ -25,6 +25,7 @@ if DEBUG:
     ALLOWED_HOSTS = ['*']
 else: 
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+    print(ALLOWED_HOSTS)
 
 # Application definition
 
