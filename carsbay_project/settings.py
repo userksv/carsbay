@@ -24,7 +24,9 @@ else:
 ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+    # uncomment in production
+    # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+    ALLOWED_HOSTS=['*']
 
 # Application definition
 
@@ -201,9 +203,9 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%s000',
 }
 
-# if not DEBUG:
-#     # Uncomment in production!!!
-#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+if not DEBUG:
+    # Uncomment in production!!!
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 #     SECURE_HSTS_SECONDS = 3600
 #     SECURE_SSL_REDIRECT = True
 #     SESSION_COOKIE_SECURE = True
@@ -211,4 +213,4 @@ REST_FRAMEWORK = {
 #     SECURE_HSTS_INCLUDE_SUBDOMAINS=True
 #     SECURE_HSTS_PRELOAD=True
 
-CSRF_TRUSTED_ORIGINS = ['http://www.carsbay.one']
+CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS')
