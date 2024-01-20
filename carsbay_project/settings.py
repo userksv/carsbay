@@ -25,7 +25,6 @@ ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
-    print(ALLOWED_HOSTS)
 
 # Application definition
 
@@ -211,3 +210,5 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_INCLUDE_SUBDOMAINS=True
     SECURE_HSTS_PRELOAD=True
+
+CSRF_TRUSTED_ORIGINS = 'http://www.carsbay.one'
