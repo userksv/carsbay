@@ -213,4 +213,4 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS=True
     SECURE_HSTS_PRELOAD=True
 
-CSRF_TRUSTED_ORIGINS = 'http://www.carsbay.one'
+CSRF_TRUSTED_ORIGINS = ['http://www.carsbay.one']
