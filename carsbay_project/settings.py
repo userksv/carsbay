@@ -21,6 +21,8 @@ if ENV == 'dev':
 else:
     DEBUG = False
     
+DEBUG = True
+
 ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
