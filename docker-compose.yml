@@ -39,6 +39,8 @@ services:
       dockerfile: Dockerfile.dev
     container_name: websocket
     command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
+    environment:
+      - ENV=dev
     volumes:
       - .:/code
     expose:
