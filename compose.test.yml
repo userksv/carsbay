@@ -17,6 +17,7 @@ services:
       - 80:80
     depends_on:
       - web
+<<<<<<< HEAD
   ##########
   acme-companion:
     image: nginxproxy/acme-companion
@@ -30,6 +31,8 @@ services:
       - ./.env.staging.proxy-companion
     depends_on:
       - nginx
+=======
+>>>>>>> 20d61f8 (deploy-reset)
 
   # Django
   web:
@@ -37,8 +40,11 @@ services:
     container_name: django
     image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:web
     command: /start-django
+<<<<<<< HEAD
     environment:
       - ENV=dev
+=======
+>>>>>>> 20d61f8 (deploy-reset)
     volumes:
       - .:/code
       - static_volume:/code/staticfiles
@@ -54,8 +60,11 @@ services:
     container_name: websocket
     image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:websocket
     command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
+<<<<<<< HEAD
     environment:
       - ENV=dev
+=======
+>>>>>>> 20d61f8 (deploy-reset)
     volumes:
       - .:/code
     expose:
