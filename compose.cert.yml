@@ -34,7 +34,7 @@ services:
   nginx-proxy:
     build: ./nginx
     container_name: nginx-proxy
-    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:nginx
+    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:nginx-proxy
     restart: always
     volumes:
       - static_volume:/code/staticfiles
