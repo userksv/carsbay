@@ -8,5 +8,5 @@ workers = 4  # Adjust based on your server's resources
 worker_connections = 1000
 threads = 4
 
-certfile = "/etc/letsencrypt/live/carsbay.com/fullchain.pem"
-keyfile = "/etc/letsencrypt/live/carsbay.com/privkey.pem"
+certfile = "/etc/letsencrypt/live/www.carsbay.com/fullchain.pem"
+keyfile = "/etc/letsencrypt/live/www.carsbay.com/privkey.pem"
