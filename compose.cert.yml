@@ -31,9 +31,9 @@ services:
     image: "redis:alpine"
 
   # Nginx
-  nginx:
+  nginx-proxy:
     build: ./nginx
-    container_name: nginx
+    container_name: nginx-proxy
     image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:nginx
     restart: always
     volumes:
@@ -51,6 +51,8 @@ services:
 
   acme-companion:
     image: nginxproxy/acme-companion
+    env_file:
+      - ./.env.staging.proxy-companion
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - certs:/etc/nginx/certs
@@ -58,7 +60,7 @@ services:
       - vhost:/etc/nginx/vhost.d
       - acme:/etc/acme.sh
     depends_on:
-      - nginx
+      - nginx-proxy
 
 volumes:
   static_volume:
