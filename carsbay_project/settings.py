@@ -16,11 +16,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ENV = os.environ.get('ENV')
-if ENV == 'dev':
-    DEBUG = True
-else:
-    DEBUG = False
-    
+
+DEBUG = False
+
 ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
@@ -104,14 +102,15 @@ WSGI_APPLICATION = "carsbay_project.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 
-if not DEBUG:
+if ENV == 'dev':
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+else:
     DATABASES = {
         "default": 
         {
@@ -123,11 +122,12 @@ if not DEBUG:
             "PORT":     os.environ['DB_PORT'],
         }
     }
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

@@ -9,7 +9,6 @@ services:
       - static_volume:/code/staticfiles
       - media_volume:/code/media
     ports:
-      - 443:443
       - 80:80
     depends_on:
       - web
