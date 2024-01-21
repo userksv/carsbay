@@ -3,7 +3,7 @@ FROM  nginxproxy/nginx-proxy
 RUN rm /etc/nginx/conf.d/default.conf
 
 COPY vhost.d/default /etc/nginx/vhost.d/default
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY custom.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
