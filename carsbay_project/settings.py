@@ -25,7 +25,8 @@ ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
     # uncomment in production
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+    # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 
