@@ -1,4 +1,42 @@
 services:
+  # Django
+  web:
+    build: .
+    container_name: django
+    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:web
+    command: /start-django
+    volumes:
+      - .:/code
+      - static_volume:/code/staticfiles
+      - media_volume:/code/media
+      - /var/certbot/conf:/etc/letsencrypt/:ro
+    environment:
+      - ENV=dev
+    expose:
+      - 8000
+    depends_on:
+      - redis
+
+  # Websocket
+  websocket:
+    build: .
+    container_name: websocket
+    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:websocket
+    command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
+    volumes:
+      - .:/code
+      - /var/certbot/conf:/etc/letsencrypt/:ro
+    environment:
+      - ENV=dev
+    expose:
+      - 9000
+    depends_on:
+      - redis
+
+  # Redis
+  redis:
+    image: "redis:alpine"
+
   # Nginx
   nginx:
     build: ./nginx
@@ -22,36 +60,6 @@ services:
     depends_on:
       - nginx
 
-  # Django
-  web:
-    build: .
-    container_name: django
-    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:web
-    command: /start-django
-    volumes:
-      - .:/code
-      - static_volume:/code/staticfiles
-      - media_volume:/code/media
-    expose:
-      - 8000
-    depends_on:
-      - redis
-
-  # Websocket
-  websocket:
-    build: .
-    container_name: websocket
-    image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:websocket
-    command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
-    volumes:
-      - .:/code
-    expose:
-      - 9000
-    depends_on:
-      - redis
-  # Redis
-  redis:
-    image: "redis:alpine"
 volumes:
   static_volume:
   media_volume:
