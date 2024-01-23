@@ -6,13 +6,14 @@ services:
     image: 730335229700.dkr.ecr.ap-northeast-2.amazonaws.com/carsbay:nginx
     restart: always
     volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
       - static_volume:/code/staticfiles
       - media_volume:/code/media
     ports:
+      - 443:443
       - 80:80
     depends_on:
       - web
-
   # Django
   web:
     build: .
