@@ -3,6 +3,9 @@ FROM  --platform="linux/amd64" nginx:1.25
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+RUN chmod 644 /etc/letsencrypt/live/carsbay.one/fullchain.pem
+RUN chmod 600 /etc/letsencrypt/live/carsbay.one/privkey.pem
+
 # COPY /etc/letsencrypt /etc/letsencrypt
 # COPY /var/lib/letsencrypt /var/lib/letsencrypt
 
