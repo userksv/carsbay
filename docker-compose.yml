@@ -7,7 +7,8 @@ services:
     container_name: nginx
     volumes:
       - static_volume:/code/staticfiles
-      - /etc/letsencrypt/live:/etc/letsencrypt/live
+      - /etc/letsencrypt/live:/etc/letsencrypt/live/
+      - /var/lib/letsencrypt:/var/lib/letsencrypt/
       - media_volume:/code/media
     ports:
       - "80:80"
