@@ -8,25 +8,11 @@ services:
     volumes:
       - static_volume:/code/staticfiles
       - media_volume:/code/media
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/www/html # Certbot volume for challenge files
     ports:
       - "80:80"
     depends_on:
       - web
       - websocket
-
-  # Certbot service
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt # Certbot volume for certificates
-      - /var/www/html # Certbot volume for challenge files
-    command: certonly --webroot --webroot-path=/var/www/html --agree-tos --email serkimdev@gmail.com -d carsbay.one
-    depends_on:
-      - nginx
-
   # Django
   web:
     build:
