@@ -16,15 +16,17 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ENV = os.environ.get('ENV')
-
-DEBUG = False
+if ENV == 'dev':
+   DEBUG = True
+else: 
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
     # uncomment in production
-    # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+    # ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -56,6 +58,9 @@ INSTALLED_APPS = [
 
 # Channels
 REDIS_URL = os.environ['REDIS_URL']
+
+if DEBUG == True:
+    REDIS_URL = 'redis://localhost:6379'
 
 ASGI_APPLICATION = "carsbay_project.asgi.application"
 CHANNEL_LAYERS = {
