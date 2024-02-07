@@ -11,6 +11,8 @@ function connect() {
   // contruct url depending on protocol
   const protocol = window.location.protocol == "https:" ? "wss" : "ws";
   const url = `${protocol}://${window.location.host}/chat/`;
+  // const url = `${protocol}://localhost/chat/`;
+  // console.log(url);
 
   let chatSocket = new WebSocket(url);
   let intervalID;

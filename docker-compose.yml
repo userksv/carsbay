@@ -1,0 +1,55 @@
+services:
+  # Nginx
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    container_name: nginx
+    volumes:
+      - static_volume:/code/staticfiles
+      - media_volume:/code/media
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+      - websocket
+  # Django
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: django
+    command: /start-django-dev
+    environment:
+      - ENV=dev
+    volumes:
+      - .:/code
+      - static_volume:/code/staticfiles
+      - media_volume:/code/media
+    expose:
+      - 8000
+    depends_on:
+      - redis
+
+  # Websocket
+  websocket:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: websocket
+    command: daphne carsbay_project.asgi:application -b 0.0.0.0 -p 9000
+    environment:
+      - ENV=dev
+    volumes:
+      - .:/code
+    expose:
+      - 9000
+    depends_on:
+      - redis
+
+  # Redis
+  redis:
+    image: "redis:alpine"
+volumes:
+  static_volume:
+  media_volume:
