@@ -37,11 +37,11 @@ class ChatConsumer(WebsocketConsumer):
         # query will return for both users same result
         # This is temporary solution, maybe I need to implement it in model???
         # Rigth now it works)
-        conversations = Conversation.objects.filter(name__icontains=user)
-        for conversation in conversations:
-            names = conversation.name.split('__')
-            if user.username in names:
-                result.append(conversation)
+        conversations = Conversation.objects.filter(name__iexact=user)
+        # for conversation in conversations:
+        #     names = conversation.name.split('__')
+        #     if user.username in names:
+        #         result.append(conversation)
         
         conversations = ConversationSerializer(result, many=True).data
         for i, conv in enumerate(conversations):
