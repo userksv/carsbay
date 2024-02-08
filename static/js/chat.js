@@ -304,7 +304,7 @@ function connect() {
 
 // userId contains user id from 'main/base.html' if user is authenticated
 const userId = document.getElementById("json_username").textContent.trim();
-if (userId) {
+if (userId !== "null") {
   connect();
 }
 // for responsive design
