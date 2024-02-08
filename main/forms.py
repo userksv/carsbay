@@ -26,7 +26,10 @@ class PostImageForm(forms.ModelForm):
             'images': 'Add images of your car',
         }
         widgets = {
-            'images': forms.ClearableFileInput(attrs={'multiple': True, 'class': 'form-control mb-2', 'label': 'add photos'}),
+            'images': forms.ClearableFileInput(attrs={
+                'multiple': True, 'class': 'form-control mb-2', 'label': 'add photos', 'required':'required'
+                }
+            ),
         }
 
 

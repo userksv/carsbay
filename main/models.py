@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-from django.urls import reverse
-from sorl.thumbnail import get_thumbnail, ImageField
 from smart_selects.db_fields import ChainedForeignKey
 from PIL import Image 
 from django.core.files.uploadedfile import InMemoryUploadedFile
@@ -63,8 +61,7 @@ class Post(models.Model):
 
 class PostImage(models.Model):
     post = models.ForeignKey(Post, related_name='post_image', on_delete=models.CASCADE)
-    # default does not work
-    images = ImageField(upload_to='post_images', default='post_images/default.jpg')
+    images = models.ImageField(upload_to='post_images')
 
     def __str__(self) -> str:
         return str(f'{self.post.make} {self.post.model}')
@@ -101,7 +98,6 @@ class PostImage(models.Model):
         output = io.BytesIO()
         img.save(output, format='JPEG', quality=70)
         output.seek(0)
-            # output_value = output.getvalue().decode('utf-8')  # Convert bytes to string
         self.images = InMemoryUploadedFile(
                 output,
                 'ImageField',
@@ -110,7 +106,10 @@ class PostImage(models.Model):
                 len(output.getvalue()),
                 None
             )
-    
+
+    def check_image_size(self):
+        ...
+        
     def convert_heic_to_jpg(self):
         ...
         
