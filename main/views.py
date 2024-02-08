@@ -62,7 +62,6 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     # Add "delete images functionality"
     model = Post
     form_class = PostUpdateForm
-    # fields = ['title', 'make', 'model', 'images']
     template_name = "main/post_update.html"
 
     # success_url = redirect('profile')
@@ -76,7 +75,6 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
         return context
 
     """ Checks user authorization """
-
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
@@ -108,7 +106,6 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixi
         return super().form_valid(form)
 
     """ Checks user authorization """
-
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:

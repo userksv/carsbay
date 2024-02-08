@@ -65,7 +65,7 @@ class PostForm(PostImageForm):
     make = forms.ModelChoiceField(queryset=Brand.objects.all(), empty_label='Select car make')
     fuel_type = forms.ChoiceField(choices=FUEL_TYPE_CHOICES)
     # For 'model' field I am using 'smart-selects library'
-    # 'empty_label' have been changed inside package (smart_selects)
+    # 'empty_label' have been changed inside package (smart_selects) it is not the solution from `empty_label`
     # /Users/kim/desktop/projects/.venvs/carsbay/lib/python3.10/site-packages/smart_selects/widgets.py
     city = forms.ModelChoiceField(queryset=City.objects.all(), empty_label='Select city')
     year = forms.ChoiceField(choices=YEAR_CHOICES,initial=0)
@@ -73,7 +73,6 @@ class PostForm(PostImageForm):
     price = forms.DecimalField(widget=forms.NumberInput(attrs={'type':'number', 'placeholder': 0}))
     description = forms.TextInput()
                                
-                        
     class Meta:
         model = Post
         fields = ['make', 'model','city','year', 'fuel_type', 'price', 'mileage', 'description']

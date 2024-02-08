@@ -22,6 +22,7 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1']
     
+    # This is for reference
     # fields = ['username', 'email', 'password1']
     # def __init__(self, *args, **kwargs):
     #     super(UserRegisterForm, self).__init__(*args, **kwargs)
@@ -36,6 +37,7 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'first_name', 'last_name']
+
 
 """ Update user profile image """
 class ProfileUpdateForm(forms.ModelForm):

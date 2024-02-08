@@ -26,11 +26,6 @@ class Profile(models.Model):
                 
             with default_storage.open(image_file.name, 'wb') as output_file:
                 img.save(output_file, format='JPEG')
-        # img = storage.open(self.image.name, 'w')
-        # print(img)
-        # format = 'png'
-        # self.image.save(img, format)
-        # img.close()
 
     def get_absolute_url(self):
         return self.image
