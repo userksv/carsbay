@@ -35,13 +35,16 @@ class ChatConsumer(WebsocketConsumer):
         result = []
         # Here I have a bug, problem is that if there two users with names like 'mike' and 'mike1123'
         # query will return for both users same result
+        # __iexact does not work in this case, as @briwa suggested from discord, conversation names consist of two usernames
+        # like 'test_mike' and  'test_mike123'
         # This is temporary solution, maybe I need to implement it in model???
         # Rigth now it works)
-        conversations = Conversation.objects.filter(name__iexact=user)
-        # for conversation in conversations:
-        #     names = conversation.name.split('__')
-        #     if user.username in names:
-        #         result.append(conversation)
+        conversations = Conversation.objects.filter(name__icontains=user)
+        print(conversations)
+        for conversation in conversations:
+            names = conversation.name.split('__')
+            if user.username in names:
+                result.append(conversation)
         
         conversations = ConversationSerializer(result, many=True).data
         for i, conv in enumerate(conversations):
@@ -49,7 +52,6 @@ class ChatConsumer(WebsocketConsumer):
             count = Message.objects.filter(to_user=self.scope['user'], read=False, conversation=conv[('id')]).count()
             # Get post image from s3 bucket
             image = str(PostImage.objects.filter(post=int(conv['post']['id'])).first().get_s3_image_link())
-            # messages = self.get_messages(conv[('name')])
             # Add count and image to serialized conversations 
             conversations[i].update({'unread_count': count, 'image': image})
         return conversations
