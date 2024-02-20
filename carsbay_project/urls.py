@@ -11,6 +11,7 @@ urlpatterns = [
     path('chaining/', include('smart_selects.urls')),
     path('contact/', include('contact.urls')),
     path('chat/', include('chat.urls')),
+    path('news/', include('news.urls')),
 ]
 
 if settings.DEBUG:

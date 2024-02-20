@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "main.apps.MainConfig",
     "chat.apps.ChatConfig",
+    "news.apps.NewsConfig",
     "django.contrib.humanize",
     "rest_framework",
     'storages',

@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+{% load humanize %}
+{% block content %}
+{% load static%}
+<h1 class="text-center">News</h1>
+<div class="album py-5 bg-white mt-1">
+    <div class="container">
+        <div class="row">
+            {% for new in news %}
+            <div class="col-md-3 mb-1">
+                <div class="card border-0 bg-white mb-2">
+                    <a href={{new.news_url}} target="_blank" style="text-decoration: none; color: black;">
+
+                        <img src="{{new.news_img_src}}" alt="{{new.img_alt}}" class="img-fluid"
+                            style=" border-radius:5%; object-fit: cover; height: 200px;">
+                        <h5 class="card-text mb-0">{{new.news_title}}</h5>
+                        <small>source:{{source}}</small>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
