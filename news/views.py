@@ -17,7 +17,7 @@ def rss_news_feed():
 
     soup = bs4.BeautifulSoup(r.text, features="xml")
     items = soup.find_all('item')
-    source = soup.link.string
+    source = soup.link.string[12:-1]
     return source , [
         {
             'news_title': item.title.string,
