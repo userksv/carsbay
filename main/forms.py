@@ -4,6 +4,8 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, HTML, Div, Row, Column
 import datetime
 
+
+
 class PostImageForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -82,9 +84,7 @@ class PostForm(PostImageForm):
     
 
 class PostUpdateForm(PostForm):
-    # FUEL_TYPE_CHOICES = [('gas', 'Gasoline'), ('diesel', 'Diesel'), ('lpg', 'LPG/LPI'), ('electro', 'EV')]
-    # fuel_type = forms.ChoiceField(widget=forms.RadioSelect, choices=FUEL_TYPE_CHOICES)
-
+   
     class Meta:
         model = Post
         fields = ['make', 'model','city','year', 'fuel_type', 'price', 'mileage', 'description']

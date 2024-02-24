@@ -26,6 +26,3 @@ def rss_news_feed():
         }
         for item in items if item.category.string == 'News'
     ]
-
-s, l = rss_news_feed()
-print(s)

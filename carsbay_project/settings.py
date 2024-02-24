@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "main.apps.MainConfig",
     "chat.apps.ChatConfig",
     "news.apps.NewsConfig",
+    "search.apps.SearchConfig",
     "django.contrib.humanize",
     "rest_framework",
     'storages',

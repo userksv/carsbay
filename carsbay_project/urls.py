@@ -12,6 +12,7 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('chat/', include('chat.urls')),
     path('news/', include('news.urls')),
+    path('search/', include('search.urls')),
 ]
 
 if settings.DEBUG:
