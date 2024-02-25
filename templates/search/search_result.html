@@ -1,12 +1,60 @@
 {% extends 'main/base.html' %}
-
-{% load crispy_forms_tags %}
-{% load widget_tweaks %}
-
+{% load thumbnail %}
+{% load humanize %}
 {% block content %}
+{% load static%}
+<h4 class="text-center border-bottom ">Search results</h1>
+    {% if not object_list%}
+    <h5 class="text-center">Nothing found</h5>
+    {% else %}
+    <div class="album py-5 bg-white mt-1">
+        <div class="container">
+            <div class="row">
+                {% for post in object_list %}
+                <div class="col-md-3 mb-1">
+                    <div class="card border-0 bg-white mb-2">
+                        <a href="{% url 'post-detail' post.id %}" style="text-decoration: none; color: black;">
+                            <!-- Showing one image -->
+                            {% for img in post.post_image.all %}
+                            {% if forloop.counter == 1 %}
 
-<h1>Search result page</h1>
-{% for post in object_list %}
-{{post.make}} {{post.model}} {{post.author}}
-{% endfor %}
-{% endblock content %}
+                            <img class="border-0 bg-light" src="{{ img.images.url }}"
+                                style=" border-radius:5%; width: 100%; object-fit: cover; height: 200px;">
+                            {% endif %}
+                            {% endfor %}
+                            <h4 class="card-text mb-0">{{post.make}} {{post.model}}</h4>
+                            <h6 class="mb-1">{{post.price|intcomma}} ₩</h6>
+                            <div class="text-muted mb-0">{{post.year}} / {{post.mileage|intcomma}} km </div>
+                            <div class="text-muted">
+                                {{post.city}}
+                            </div>
+                            <small> posted {{post.date_posted|naturalday}}</small>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    </span>
+                    {% else %}
+                    <span></span>
+                    {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endblock content %}

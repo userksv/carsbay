@@ -8,19 +8,23 @@ from django.db.models import Q
 from main.models import get_models, Post
 from .forms import SearchForm
 
-class SearchForm(FormView):
+class SearchForm(FormView, ListView):
+    model = Post
     template_name = 'search/search.html'
     form_class = SearchForm
 
+    def form_valid(self, form: Any) -> HttpResponse:
+        print(form.data)
+        return super().form_valid(form)
+
     def get_success_url(self):
-        post = self.get_object()
         return reverse("search-result/")
 
 
 class SearchResultView(ListView):
     model = Post
     template_name = 'search/search_result.html'
-    
+
     def post(self):
         return 
     
@@ -37,9 +41,9 @@ class SearchResultView(ListView):
         model = self.request.GET.get('model')
         y_from = int(self.request.GET.get('year_from'))
         year_to = int(self.request.GET.get('year_to'))
-        posts = Post.objects.filter(model=model, year__range=[y_from, year_to])
+        object_list = Post.objects.filter(model=model, year__range=[y_from, year_to])
         
-        return posts
+        return object_list
 
     
 def models(request):

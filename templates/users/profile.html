@@ -18,7 +18,8 @@
                                 <div class="bg-image hover-zoom ripple rounded ripple-surface">
                                     {% for img in post.post_image.all %}
                                     {% if forloop.counter == 1 %}
-                                    <img src="{{ img.images.url }}" class="w-100" />
+                                    <a href="{% url 'post-detail' post.id %}"><img src="{{ img.images.url }}"
+                                            class="w-100" /></a>
                                     {% endif %}
                                     {% endfor %}
                                     <a href="#!">
