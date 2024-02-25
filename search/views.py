@@ -54,17 +54,3 @@ def models(request):
         'models': models
     }
     return render(request, 'search/models.html', context)
-
-
-# def search_result(request):
-#     return render(request, 'search/search_result.html')
-
-# def search(request):
-#     post_data = request.POST
-#     print(post_data)
-
-#     # print(make, model, year_from, year_to)
-#     context = {
-#         'form': SearchForm(),
-#     }
-#     return render(request, 'search/search.html', context)
