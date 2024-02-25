@@ -1,21 +1,66 @@
-
-from django.views.generic import FormView
+from typing import Any
+from django.db.models.query import QuerySet
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views.generic import ListView, FormView, TemplateView, CreateView
+from django.db.models import Q
+from main.models import get_models, Post
 from .forms import SearchForm
 
-
-class SearchResultView(FormView):
-    form_class = SearchForm
+class SearchForm(FormView):
     template_name = 'search/search.html'
+    form_class = SearchForm
 
-    def form_valid(self, form):
-        make = form.cleaned_data['make']
-        year_from = form.cleaned_data['year_from']
-        year_to = form.cleaned_data['year_to']
-        
-        print(make, year_from, year_to)
-        
-        return super().form_valid(form)
+    def get_success_url(self):
+        post = self.get_object()
+        return reverse("search-result/")
+
+
+class SearchResultView(ListView):
+    model = Post
+    template_name = 'search/search_result.html'
     
-    def get_success_url(self) -> str:
-       return reverse('search')
+    def post(self):
+        return 
+    
+    def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        y_from = int(self.request.GET.get('year_from'))
+        year_to = int(self.request.GET.get('year_to'))
+        if y_from > year_to:
+            return redirect('/search/')
+        self.get_queryset()
+
+        return super().get(request, *args, **kwargs)
+    
+    def get_queryset(self, *args, **kwargs):
+        model = self.request.GET.get('model')
+        y_from = int(self.request.GET.get('year_from'))
+        year_to = int(self.request.GET.get('year_to'))
+        posts = Post.objects.filter(model=model, year__range=[y_from, year_to])
+        
+        return posts
+
+    
+def models(request):
+    make = request.GET.get('make')
+    
+    models = get_models(make)
+    context = {
+        'models': models
+    }
+    return render(request, 'search/models.html', context)
+
+
+# def search_result(request):
+#     return render(request, 'search/search_result.html')
+
+# def search(request):
+#     post_data = request.POST
+#     print(post_data)
+
+#     # print(make, model, year_from, year_to)
+#     context = {
+#         'form': SearchForm(),
+#     }
+#     return render(request, 'search/search.html', context)

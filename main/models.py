@@ -43,6 +43,7 @@ class Post(models.Model):
                         auto_choose=True,
                         sort=True,
                         )
+    # model = models.ForeignKey(CarModel, on_delete=models.DO_NOTHING)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(default=timezone.now)
     city = models.ForeignKey(City, on_delete=models.DO_NOTHING) 
@@ -61,7 +62,7 @@ class Post(models.Model):
 
 class PostImage(models.Model):
     post = models.ForeignKey(Post, related_name='post_image', on_delete=models.CASCADE)
-    images = models.ImageField(upload_to='post_images')
+    images = models.ImageField(upload_to='post_images', blank=True) # how to make blank=True only for update view?
 
     def __str__(self) -> str:
         return str(f'{self.post.make} {self.post.model}')
@@ -113,3 +114,6 @@ class PostImage(models.Model):
     def convert_heic_to_jpg(self):
         ...
         
+
+def get_models(pk):
+    return CarModel.objects.filter(make=pk)

@@ -1,9 +1,8 @@
 from django import forms
-from .models import Post, PostImage, Brand, City
+from .models import Post, PostImage, Brand, City, CarModel
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, HTML, Div, Row, Column
 import datetime
-
 
 
 class PostImageForm(forms.ModelForm):
@@ -29,7 +28,7 @@ class PostImageForm(forms.ModelForm):
         }
         widgets = {
             'images': forms.ClearableFileInput(attrs={
-                'multiple': True, 'class': 'form-control mb-2', 'label': 'add photos', 'required':'required'
+                'multiple': True, 'class': 'form-control mb-2', 'label': 'add photos'
                 }
             ),
         }
@@ -84,7 +83,9 @@ class PostForm(PostImageForm):
     
 
 class PostUpdateForm(PostForm):
-   
+    # FUEL_TYPE_CHOICES = [('gas', 'Gasoline'), ('diesel', 'Diesel'), ('lpg', 'LPG/LPI'), ('electro', 'EV')]
+    # fuel_type = forms.ChoiceField(widget=forms.RadioSelect, choices=FUEL_TYPE_CHOICES)
+
     class Meta:
         model = Post
         fields = ['make', 'model','city','year', 'fuel_type', 'price', 'mileage', 'description']

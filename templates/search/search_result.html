@@ -6,4 +6,7 @@
 {% block content %}
 
 <h1>Search result page</h1>
+{% for post in object_list %}
+{{post.make}} {{post.model}} {{post.author}}
+{% endfor %}
 {% endblock content %}

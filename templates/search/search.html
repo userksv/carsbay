@@ -1,28 +1,16 @@
 {% extends 'main/base.html' %}
-{% load thumbnail %}
-{% load humanize %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
 {% load static %}
 <h1>Search page Form</h1>
 
-<div class="d-flex justify-content-center ">
-    <form method="POST" action="{% url 'search' %}">
-        {% csrf_token %}
-        <div class="form-group">
-            <legend class="border-bottom mb-4">Fill out car details</legend>
-            {{ form.media.js }}
-
-            {{form|crispy}}
-        </div>
-        <button type="submit" id="searchSubmit" disabled>Find</button>
-    </form>
-</div>
-{% if form.errors %}
-<div class="alert alert-danger">
-    {{ form.errors }}
-</div>
-{% endif %}
+<form method="get" action="search-result/" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit" id="searchSubmit">Find</button>
+</form>
 {% endblock %}

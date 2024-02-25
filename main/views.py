@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from main.models import Post, PostImage
 from django.contrib import messages
 from django.views.generic import (
@@ -76,6 +76,7 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
 
     """ Checks user authorization """
     def test_func(self):
+
         post = self.get_object()
         if self.request.user == post.author:
             return True
