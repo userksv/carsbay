@@ -3,7 +3,7 @@ from .import views
 from .views import PostDetailView, PostUpdateView, PostDeleteView, PostView, PostCreateView
 from django.conf.urls.static import static
 from django.conf import settings
-
+from main.api import services
 
 urlpatterns = [
     path('', PostView.as_view(), name='home'),
@@ -12,6 +12,7 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='about'),
+    path('post-images/<int:pk>/', services.fetch_post_images, name='post-images'),
 ]
 
 

@@ -1,3 +1,6 @@
+import json
+from typing import Any
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from main.models import Post, PostImage
 from django.contrib import messages
@@ -63,20 +66,33 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostUpdateForm
     template_name = "main/post_update.html"
+    
+    images_to_update = []
 
-    # success_url = redirect('profile')
     def get_success_url(self):
-        post = self.get_object()
         return reverse("profile")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form2"] = PostImageForm()
+        context["form2"] = PostImageForm(self.request.FILES)
+        images = PostImage.objects.filter(post=self.get_object())
+        context['images'] = [{'url': image.images.url, 'id': image.id} for image in images]
         return context
-
+    
+    def put(self, *args: str, **kwargs: Any) -> HttpResponse:
+        if self.request.method == 'PUT':
+            # Get post image instance by id from request and 
+            # construct list of objects for further deletion on form_valid
+            image_id = json.loads(self.request.body.decode('utf-8'))['imageId']
+            print(image_id)
+            if image_id is None:
+                return HttpResponse( 'Image not found', status=404)
+            image_instance = PostImage.objects.get(id=image_id)
+            self.images_to_update.append(image_instance)
+        return HttpResponse('Ok', status=200)
+    
     """ Checks user authorization """
     def test_func(self):
-
         post = self.get_object()
         if self.request.user == post.author:
             return True
@@ -84,10 +100,21 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         form2 = PostImageForm(self.request.POST, self.request.FILES)
+
+        if self.images_to_update:
+            for image in self.images_to_update:
+                print(image)
+                try:
+                    image.delete()
+                except:
+                    print('File not found')
+            self.images_to_update = []
+        
         if form2.is_valid():
             images = self.request.FILES.getlist("images")
             for image in images:
                 PostImage.objects.create(post=self.object, images=image)
+                ...
 
         messages.success(self.request, f"Your post has been updated!")
         return super().form_valid(form)
@@ -105,14 +132,12 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixi
     def form_valid(self, form):
         messages.success(self.request, f"Your post has been deleted sucessfully!")
         return super().form_valid(form)
-
-    """ Checks user authorization """
+    
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
             return True
         return False
-
 
 def about(request):
     return render(request, "main/about.html", {"title": "About"})

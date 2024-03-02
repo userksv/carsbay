@@ -82,9 +82,12 @@ class PostForm(PostImageForm):
         }
     
 
-class PostUpdateForm(PostForm):
+class PostUpdateForm(PostForm, PostImageForm):
     # FUEL_TYPE_CHOICES = [('gas', 'Gasoline'), ('diesel', 'Diesel'), ('lpg', 'LPG/LPI'), ('electro', 'EV')]
     # fuel_type = forms.ChoiceField(widget=forms.RadioSelect, choices=FUEL_TYPE_CHOICES)
+    def __init__(self, *args, **kwargs):
+        
+        super().__init__(*args, **kwargs)
 
     class Meta:
         model = Post

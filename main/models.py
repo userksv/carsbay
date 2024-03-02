@@ -62,10 +62,10 @@ class Post(models.Model):
 
 class PostImage(models.Model):
     post = models.ForeignKey(Post, related_name='post_image', on_delete=models.CASCADE)
-    images = models.ImageField(upload_to='post_images', blank=True) # how to make blank=True only for update view?
+    images = models.ImageField(upload_to='post_images', blank=True)
 
     def __str__(self) -> str:
-        return str(f'{self.post.make} {self.post.model}')
+        return str(f'{self.post.make} {self.post.model} {self.images}')
 
     def get_s3_image_link(self):
         """

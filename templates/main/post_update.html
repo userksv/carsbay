@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
 {% if user.is_authenticated %}
 
@@ -19,6 +20,10 @@
     </div> -->
   </form>
 </div>
+<div id="preview">
 
+</div>
+{{images|json_script:'post_images'}}
 {% endif %}
+<script src="{% static 'js/postImages.js'%}" type="text/javascript"></script>
 {% endblock%}
