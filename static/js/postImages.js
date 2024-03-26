@@ -6,12 +6,13 @@ const imagesInput = document.querySelector("#id_images");
 const submitBtn = document.querySelector("#submit-id-submit");
 const imagesFromClientArray = [];
 
-let combinedImages = [...imagesFromServerArray]; // for rendering
+let combinedImages = [...imagesFromServerArray]; // this array for rendering images on page
 
 displayImages(combinedImages);
 
 async function updateData(id) {
-  // Send PUT request to server with image id, on server created list of image instances for deleting
+  // Send PUT request to server with image id,
+  // on server created list of image instances for deleting whitout saving changes
   const url = window.location;
   const csrftoken = document.querySelector("[name=csrfmiddlewaretoken]").value;
   try {
@@ -33,26 +34,68 @@ async function updateData(id) {
   }
 }
 
+function createElement(type, className) {
+  // creating html element with class attr
+  var element = document.createElement(type);
+  element.className = className;
+  return element;
+}
+
+function createCloseBtnOnImage(index, id) {
+  const closeBtn = createElement(
+    "button",
+    "btn-close btn-close-hidden btn-close-white btn-close-visible-mobile"
+  );
+  closeBtn.setAttribute("data-bs-dismiss", "modal");
+  closeBtn.setAttribute("arial-label", "Close");
+  closeBtn.setAttribute("type", "button");
+  closeBtn.setAttribute("onclick", `removeImageFromArray(${index}, ${id})`);
+  return closeBtn;
+}
+
+function createImgElement(imgUrl, id, index) {
+  const col = createElement(
+    "div",
+    "col mb-1 mr-2 image-container position-relative"
+  );
+  const img = createElement("img", "img");
+  const closeBtn = createCloseBtnOnImage(index, id);
+  img.style = "border-radius:5%; width: 140px; height: 100px;";
+  img.src = imgUrl;
+  img.id = id;
+
+  col.append(img);
+  col.append(closeBtn);
+
+  return col;
+}
+
 function displayImages(imagesArray) {
-  let images = "";
-  for (let i = 0; i < imagesArray.length; i++) {
-    const image = imagesArray[i].url;
-    const imageId = imagesArray[i].id;
-    images += `<div class="p-2 bd-highlight">
-                 <img src="${image}"
-                  alt="image"
-                  style="border-radius:5%; width: 100%; object-fit: cover; height: 100px;"></img>
-                  <button onclick="removeImageFromArray(${i}, ${imageId})" type="button" class="obj btn-close" aria-label="Close"></button>
-               </div>`;
-  }
-  preview.innerHTML = `<div style="display: flex; flex-wrap: nowrap; overflow-x: auto;">${images}</div>`;
+  preview.innerHTML = ""; // clear preview div and render new images array
+
+  imagesArray.forEach((image, index) => {
+    if (index % 4 === 0) {
+      // every 4th image starts on new row
+      const dFlex = createElement("div", "d-flex justify-content-center");
+      const row = createElement("div", "row mb-2");
+      dFlex.append(row);
+      preview.appendChild(dFlex);
+    }
+    const imgElement = createImgElement(image.url, image.id, index);
+
+    const dFlexs = document.querySelectorAll(".d-flex.justify-content-center");
+    const lastDFlex = dFlexs[dFlexs.length - 1];
+    lastDFlex.lastChild.appendChild(imgElement);
+  });
 }
 
 function removeImageFromArray(index, id) {
+  console.log(id);
   // removes elements from combinedImages array
   // updateData sends request to server with id
   // removeFileFromFileList creates new fileList excluding image on index
   // combinedImages used only for rendering in template
+  // images from client do not have id
   if (id !== 0) {
     updateData(id);
   } else {
@@ -81,6 +124,7 @@ function handleInput() {
     const image = { url: imageURL, id: imageId, name: name };
     imagesFromClientArray.push(image);
   }
+  console.log(imagesFromClientArray);
   // creating combined array for rendering
   combinedImages = imagesFromServerArray.concat(imagesFromClientArray);
   displayImages(combinedImages);
@@ -89,14 +133,14 @@ function handleInput() {
 function removeFileFromFileList(image) {
   // https://stackoverflow.com/a/64019766
   const dt = new DataTransfer();
-  const name = image.name;
   const input = document.querySelector("#id_images");
   const { files } = input;
   const fileListForManipulation = [...files];
 
   for (let i = 0; i < fileListForManipulation.length; i++) {
     const file = fileListForManipulation[i];
-    if (file.name !== name) {
+    if (file.name !== image.name) {
+      // creating new file list excluding passed `image`
       dt.items.add(file);
     }
   }

@@ -1,0 +1,32 @@
+.image-container {
+  position: relative;
+  display: inline-block;
+  /* Ensures the container takes the size of the image */
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 1;
+  /* Ensures button appears on top of the image */
+}
+
+.btn-close-hidden {
+  display: none;
+}
+
+.position-relative:hover .btn-close-hidden {
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .btn-close-visible-mobile {
+    display: block;
+    position: absolute;
+    color: white;
+    top: 10%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+  }
+}

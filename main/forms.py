@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, PostImage, Brand, City, CarModel
+from .models import Post, PostImage, Brand, City
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, HTML, Div, Row, Column
 import datetime
@@ -13,11 +13,11 @@ class PostImageForm(forms.ModelForm):
         self.helper.form_tag = False
         self.helper.layout = Layout(
             'images',
-            Div(        
-                Submit('submit', 'Place post', css_class='btn btn-primary btn-sm'),
-                HTML('<a class="btn btn-secondary btn-sm" href="{% url \'home\' %}">Cancel</a>'),
-                css_class="d-grid gap-2 d-md-block",
-            )
+            # Div(        
+            #     Submit('submit', 'Place post', css_class='btn btn-primary btn-sm'),
+            #     HTML('<a class="btn btn-secondary btn-sm" href="{% url \'home\' %}">Cancel</a>'),
+            #     css_class="d-grid gap-2 d-md-block",
+            # )
         )
 
     class Meta:
@@ -85,10 +85,7 @@ class PostForm(PostImageForm):
 class PostUpdateForm(PostForm, PostImageForm):
     # FUEL_TYPE_CHOICES = [('gas', 'Gasoline'), ('diesel', 'Diesel'), ('lpg', 'LPG/LPI'), ('electro', 'EV')]
     # fuel_type = forms.ChoiceField(widget=forms.RadioSelect, choices=FUEL_TYPE_CHOICES)
-    def __init__(self, *args, **kwargs):
-        
-        super().__init__(*args, **kwargs)
-
+    
     class Meta:
         model = Post
         fields = ['make', 'model','city','year', 'fuel_type', 'price', 'mileage', 'description']

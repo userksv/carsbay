@@ -1,20 +1,62 @@
 const imagesInput = document.querySelector("#id_images");
 const submitBtn = document.querySelector("#submit-id-submit");
+const div_id_images = document.querySelector("#div_id_images");
+const parentPreview = document.querySelector("#parentPreview");
+const preview = document.querySelector("#preview");
+
 const imagesArray = [];
 
+function createElement(type, className) {
+  var element = document.createElement(type);
+  element.className = className;
+  return element;
+}
+
+function createCloseBtnOnImage(index) {
+  const closeBtn = createElement(
+    "button",
+    "btn-close btn-close-hidden btn-close-white btn-close-visible-mobile"
+  );
+  closeBtn.setAttribute("data-bs-dismiss", "modal");
+  closeBtn.setAttribute("arial-label", "Close");
+  closeBtn.setAttribute("type", "button");
+  closeBtn.setAttribute("onclick", `removeImageFromArray(${index})`);
+  return closeBtn;
+}
+
+function createImgElement(imgUrl, imgIndex) {
+  const col = createElement(
+    "div",
+    "col mb-1 mr-2 image-container position-relative"
+  );
+  const img = createElement("img", "img");
+  const closeBtn = createCloseBtnOnImage(imgIndex);
+  console.log(closeBtn);
+  img.style = "border-radius:5%; width: 140px; height: 100px;";
+  img.src = imgUrl;
+  img.id = imgIndex;
+
+  col.append(img);
+  col.append(closeBtn);
+
+  return col;
+}
+
 function displayImages(imagesArray) {
-  let images = "";
-  for (let i = 0; i < imagesArray.length; i++) {
-    const image = imagesArray[i].url;
-    const imageId = imagesArray[i].id;
-    images += `<div class="p-2 bd-highlight">
-                   <img src="${image}"
-                    alt="image"
-                    style="border-radius:5%; width: 100%; object-fit: cover; height: 100px;"></img>
-                    <button onclick="removeImageFromArray(${i})" type="button" class="obj btn-close" aria-label="Close"></button>
-                 </div>`;
-  }
-  preview.innerHTML = `<div style="display: flex; flex-wrap: nowrap; overflow-x: auto;">${images}</div>`;
+  preview.innerHTML = ""; // clear preview div and render new images array
+  imagesArray.forEach((image, index) => {
+    if (index % 4 === 0) {
+      const dFlex = createElement("div", "d-flex justify-content-center");
+      const row = createElement("div", "row mb-2");
+      dFlex.append(row);
+      preview.appendChild(dFlex);
+    }
+    const imgElement = createImgElement(image.url, index);
+
+    const dFlexs = document.querySelectorAll(".d-flex.justify-content-center");
+    const lastDFlex = dFlexs[dFlexs.length - 1];
+    lastDFlex.lastChild.appendChild(imgElement);
+  });
 }
 
 imagesInput.addEventListener("change", handleInput, false);
@@ -28,13 +70,11 @@ function handleInput() {
       continue;
     }
     const imageURL = URL.createObjectURL(file); // for rendering in template
-    // const imageId = 0; // must be defined for combinedImages array
     const name = fileList[i].name;
 
     const image = { url: imageURL, name: name };
     imagesArray.push(image);
   }
-  // creating combined array for rendering
   displayImages(imagesArray);
 }
 
