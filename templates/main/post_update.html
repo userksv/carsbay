@@ -26,6 +26,7 @@
         </div>
         <div class="btn-group">
           <button class="btn btn-primary btn-sm m-1 btn-block" type="submit">Save </button>
+          <a class="btn btn-danger btn-sm m-1 btn-block" href="{% url 'post-delete' post.id %}">Delete</a>
           <a class="btn btn-secondary btn-sm m-1 btn-block" href="{% url 'profile' %}">Cancel</a>
         </div>
       </div>
