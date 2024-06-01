@@ -28,6 +28,14 @@
     <header>
       {% include 'main/navbar.html'%}
     </header>
+    {% if not user.is_authenticated %}
+    <div class="d-flex justify-content-center">
+      <small>
+        Hi! You can try this website without registration.
+        Log in with (username: <strong>'test'</strong>, pass: <strong>'Testing321'</strong>)
+      </small>
+    </div>
+    {% endif %}
 
     <!-- Flash messages -->
     {% if messages %}
