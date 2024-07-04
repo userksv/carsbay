@@ -14,6 +14,9 @@ class Brand(models.Model):
     make = models.CharField(max_length=128)
     def __str__(self) -> str:
         return self.make 
+    
+    class Meta:
+        ordering = ['make']
 
 
 class CarModel(models.Model):
@@ -22,6 +25,9 @@ class CarModel(models.Model):
 
     def __str__(self) -> str:
         return self.name 
+    
+    class Meta:
+        ordering = ['name']
 
 
 class City(models.Model):
