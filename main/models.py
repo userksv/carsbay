@@ -42,14 +42,7 @@ class City(models.Model):
 
 class Post(models.Model):
     make = models.ForeignKey(Brand, on_delete=models.DO_NOTHING)
-    model = ChainedForeignKey(
-                        CarModel,
-                        chained_field="make",
-                        chained_model_field="make",
-                        auto_choose=True,
-                        sort=True,
-                        )
-    # model = models.ForeignKey(CarModel, on_delete=models.DO_NOTHING)
+    model = models.ForeignKey(CarModel, on_delete=models.DO_NOTHING)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(default=timezone.now)
     city = models.ForeignKey(City, on_delete=models.DO_NOTHING) 

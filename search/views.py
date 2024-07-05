@@ -1,10 +1,8 @@
 from typing import Any
-from django.db.models.query import QuerySet
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views.generic import ListView, FormView, TemplateView, CreateView
-from django.db.models import Q
+from django.views.generic import ListView, FormView
 from main.models import get_models, Post
 from .forms import SearchForm
 
@@ -14,7 +12,6 @@ class SearchForm(FormView, ListView):
     form_class = SearchForm
 
     def form_valid(self, form: Any) -> HttpResponse:
-        print(form.data)
         return super().form_valid(form)
 
     def get_success_url(self):

@@ -2,7 +2,7 @@ import json
 from typing import Any
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
-from main.models import Post, PostImage
+from main.models import Post, PostImage, get_models
 from django.contrib import messages
 from django.views.generic import (
     ListView,
@@ -16,8 +16,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from main.forms import PostForm, PostUpdateForm, PostImageForm
 from django.urls import reverse
 
-
-# Create your views here.
 
 class PostView(ListView):
     paginate_by = 8
@@ -34,6 +32,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
+    template_name = 'main/post_form.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -141,3 +140,12 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixi
 
 def about(request):
     return render(request, "main/about.html", {"title": "About"})
+
+def models(request):
+    make = request.GET.get('make')
+    
+    models = get_models(make)
+    context = {
+        'models': models
+    }
+    return render(request, 'main/models.html', context)

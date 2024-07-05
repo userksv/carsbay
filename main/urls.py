@@ -13,6 +13,7 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='about'),
     path('post-images/<int:pk>/', services.fetch_post_images, name='post-images'),
+    path('post/new/models/', views.models, name='models'),
 ]
 
 
