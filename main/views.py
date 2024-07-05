@@ -34,6 +34,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     form_class = PostForm
     template_name = 'main/post_form.html'
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form2"] = PostImageForm()
@@ -44,8 +45,10 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         self.instance.author = self.request.user
         self.instance.save()
 
+        # TODO
         ####### This form does not work with small images!!!!!!
         form2 = PostImageForm(self.request.POST, self.request.FILES)
+        print(self.request.FILES)
         if form2.is_valid():
             print("Form2 valid")
             images = self.request.FILES.getlist("images")
@@ -140,6 +143,7 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixi
 
 def about(request):
     return render(request, "main/about.html", {"title": "About"})
+
 
 def models(request):
     make = request.GET.get('make')

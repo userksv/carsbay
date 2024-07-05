@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-05 14:09+0900\n"
-"PO-Revision-Date: 2024-07-05 13:57+0900\n"
+"POT-Creation-Date: 2024-07-05 17:13+0900\n"
+"PO-Revision-Date: 2024-07-05 16:59+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,38 +19,82 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: carsbay_project/settings.py:183
-msgid "English"
-msgstr "English"
+#: main/forms.py:23
+msgid "Add images of your car"
+msgstr ""
 
-#: carsbay_project/settings.py:184
-msgid "Russian"
-msgstr "Russian"
+#: main/forms.py:59
+#, fuzzy
+#| msgid "fuel type"
+msgid "Select fuel type"
+msgstr "Fuel type"
 
-#: main/forms.py:68 main/models.py:17
+#: main/forms.py:60
+msgid "Select year"
+msgstr ""
+
+#: main/forms.py:62
 msgid "make"
 msgstr "Make"
 
-#: main/forms.py:69
-msgid "fuel type"
+#: main/forms.py:62
+msgid "Select car make"
 msgstr ""
+
+#: main/forms.py:69
+msgid "model"
+msgstr "Model"
+
+#: main/forms.py:69
+msgid "Select model"
+msgstr ""
+
+#: main/forms.py:70
+msgid "fuel type"
+msgstr "Fuel type"
+
+#: main/forms.py:71
+msgid "city"
+msgstr "City"
+
+#: main/forms.py:71
+msgid "Select city"
+msgstr ""
+
+#: main/forms.py:72
+msgid "year"
+msgstr "Year"
 
 #: main/forms.py:73
-msgid "city"
-msgstr ""
+msgid "mileage"
+msgstr "Mileage"
 
 #: main/forms.py:74
-msgid "year"
-msgstr ""
-
-#: main/forms.py:75
-msgid "mileage"
-msgstr ""
-
-#: main/forms.py:76
 msgid "price"
+msgstr "Price"
+
+#: main/forms.py:81
+msgid "Write a short description"
 msgstr ""
 
-#: main/models.py:60
-msgid "description"
+#: main/models.py:51
+msgid "Description"
 msgstr ""
+
+#: templates/main/post_form.html:20
+msgid "Fill out car details"
+msgstr ""
+
+#: templates/main/post_form.html:37
+msgid "Place post"
+msgstr ""
+
+#: templates/main/post_form.html:38
+msgid "Cancel"
+msgstr ""
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "Russian"
+#~ msgstr "Russian"

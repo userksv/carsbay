@@ -4,7 +4,6 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
-import smart_selects.db_fields
 import sorl.thumbnail.fields
 
 
@@ -55,7 +54,7 @@ class Migration(migrations.Migration):
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 ('city', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='main.city')),
                 ('make', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='main.brand')),
-                ('model', smart_selects.db_fields.ChainedForeignKey(auto_choose=True, chained_field='make', chained_model_field='make', on_delete=django.db.models.deletion.CASCADE, to='main.carmodel')),
+                ('model', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='main.carmodel'))
             ],
         ),
         migrations.CreateModel(

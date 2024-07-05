@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-05 14:09+0900\n"
-"PO-Revision-Date: 2024-07-05 14:09+0900\n"
+"POT-Creation-Date: 2024-07-05 17:13+0900\n"
+"PO-Revision-Date: 2024-07-05 17:13+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,41 +19,82 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: carsbay_project/settings.py:183
-msgid "English"
-msgstr "Английский"
+#: main/forms.py:23
+msgid "Add images of your car"
+msgstr "Добавьте фото "
 
-#: carsbay_project/settings.py:184
-msgid "Russian"
-msgstr "Русский"
+#: main/forms.py:59
+#, fuzzy
+#| msgid "fuel type"
+msgid "Select fuel type"
+msgstr "Тип топлива"
 
-#: main/forms.py:68 main/models.py:17
+#: main/forms.py:60
+msgid "Select year"
+msgstr "Выберите год"
+
+#: main/forms.py:62
 msgid "make"
 msgstr "Марка"
 
+#: main/forms.py:62
+msgid "Select car make"
+msgstr "Выберите марку"
+
 #: main/forms.py:69
+msgid "model"
+msgstr "Модель"
+
+#: main/forms.py:69
+msgid "Select model"
+msgstr "Выберите модель"
+
+#: main/forms.py:70
 msgid "fuel type"
 msgstr "Тип топлива"
 
-#: main/forms.py:73
+#: main/forms.py:71
 msgid "city"
 msgstr "Город"
 
-#: main/forms.py:74
+#: main/forms.py:71
+msgid "Select city"
+msgstr "Выберите город"
+
+#: main/forms.py:72
 msgid "year"
 msgstr "Год"
 
-#: main/forms.py:75
+#: main/forms.py:73
 msgid "mileage"
 msgstr "Пробег"
 
-#: main/forms.py:76
+#: main/forms.py:74
 msgid "price"
 msgstr "Цена"
 
-#: main/models.py:60
-msgid "description"
+#: main/forms.py:81
+msgid "Write a short description"
+msgstr "Напишите краткое описание..."
+
+#: main/models.py:51
+msgid "Description"
 msgstr "Описание"
 
-#~ msgid "model"
-#~ msgstr "Модель"
+#: templates/main/post_form.html:20
+msgid "Fill out car details"
+msgstr "Заполните данные об авто"
+
+#: templates/main/post_form.html:37
+msgid "Place post"
+msgstr "Разместить"
+
+#: templates/main/post_form.html:38
+msgid "Cancel"
+msgstr "Отмена"
+
+#~ msgid "English"
+#~ msgstr "Английский"
+
+#~ msgid "Russian"
+#~ msgstr "Русский"

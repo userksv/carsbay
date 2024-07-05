@@ -1,7 +1,7 @@
+from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-from smart_selects.db_fields import ChainedForeignKey
 from PIL import Image 
 from django.core.files.uploadedfile import InMemoryUploadedFile
 import io, os
@@ -20,7 +20,7 @@ class Brand(models.Model):
 
 
 class CarModel(models.Model):
-    make = models.ForeignKey(Brand, on_delete=models.DO_NOTHING)
+    make = models.ForeignKey(Brand, on_delete=models.DO_NOTHING, related_name='models')
     name = models.CharField(max_length=128)
 
     def __str__(self) -> str:
@@ -47,7 +47,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     city = models.ForeignKey(City, on_delete=models.DO_NOTHING) 
     year = models.IntegerField()
-    description = models.TextField(max_length=1024, default='')
+    description = models.TextField(_('Description'), max_length=1024, default='')
     fuel_type = models.CharField(max_length=16)
     price = models.DecimalField(max_digits=8, decimal_places=0, default=0)
     mileage = models.DecimalField(max_digits=6, decimal_places=0, default=0)
@@ -90,11 +90,13 @@ class PostImage(models.Model):
         super(PostImage, self).save(*args, **kwargs)
 
     def convert_to_jpeg(self):
+        # TODO:
+        # It does not work properly 
         img = Image.open(io.BytesIO(self.images.read()))
         if img.mode != 'RGB':
             img = img.convert('RGB')
             
-        img.thumbnail((self.images.width / 1.5, self.images.height / 1.5), Image.ANTIALIAS)
+        img.thumbnail((self.images.width / 1.5, self.images.height / 1.5), Image.LANCZOS)
         output = io.BytesIO()
         img.save(output, format='JPEG', quality=70)
         output.seek(0)

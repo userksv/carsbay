@@ -33,7 +33,6 @@ if not DEBUG:
 INSTALLED_APPS = [
     "daphne",
     "channels",
-    "smart_selects",
     "django_extensions",
     "crispy_forms",
     "crispy_bootstrap5",
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "rest_framework",
     'storages',
+    'rosetta',
     # 'djmoney',
     #########################
     "django.contrib.admin",
@@ -168,7 +168,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = os.getenv('TIME_ZONE')
 
@@ -177,9 +177,13 @@ USE_I18N = True
 USE_TZ = True
 
 LANGUAGES = (
-    ('en-us', 'English US'),
+    ('en', 'English'),
     ('ru', 'Russian')
 )
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
