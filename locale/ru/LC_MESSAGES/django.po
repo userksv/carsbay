@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-06 23:45+0900\n"
-"PO-Revision-Date: 2024-07-06 23:47+0900\n"
+"POT-Creation-Date: 2024-07-07 11:02+0900\n"
+"PO-Revision-Date: 2024-07-07 11:04+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -100,17 +100,14 @@ msgid "Description"
 msgstr "Описание"
 
 #: main/views.py:60
-#| msgid "Your account has been updated!"
 msgid "Your post has been created!"
 msgstr "Ваше объявление создано"
 
 #: main/views.py:123
-#| msgid "Your account has been updated!"
 msgid "Your post has been updated!"
 msgstr "Ваше объявление обновлено"
 
 #: main/views.py:137
-#| msgid "Your account has been updated!"
 msgid "Your post has been deleted sucessfully!"
 msgstr "Ваше объявление успешно удалено"
 
@@ -150,6 +147,10 @@ msgstr "Привет!"
 #: templates/main/about.html:8
 msgid "Here you can sell or buy used car"
 msgstr "На этом сайте вы можете продать или подобрать себе авто."
+
+#: templates/main/home.html:29 templates/users/profile.html:41
+msgid "posted:"
+msgstr "размещен:"
 
 #: templates/main/navbar.html:15
 msgid "News"
@@ -228,6 +229,14 @@ msgstr "Зарегистрироваться?"
 msgid "Forgot password?"
 msgstr "Забыли пароль?"
 
+#: templates/users/logout.html:5
+msgid "You have been logout"
+msgstr "Вы вышли"
+
+#: templates/users/logout.html:11
+msgid "Log-in again"
+msgstr "Вернуться на сайт"
+
 #: templates/users/password_reset.html:8
 msgid ""
 "\n"
@@ -276,10 +285,6 @@ msgstr ""
 "Если Вы не получили письмо с инструкциями, пожалуйста проверьте, правильность введения электронной почты.\n"
 "</p>"
 
-#: templates/users/profile.html:41
-msgid "posted:"
-msgstr "размещен:"
-
 #: templates/users/profile.html:53
 msgid "Edit"
 msgstr "Редактировать"
@@ -307,6 +312,10 @@ msgstr "Ваш пароль установлен. Вы можете войти"
 #: users/views.py:57
 msgid "Your account has been updated!"
 msgstr "Ваш аккаунт обновлен!"
+
+#, fuzzy
+#~ msgid "posted"
+#~ msgstr "размещен:"
 
 #, python-brace-format
 #~ msgid "Welcome {user.username}!"

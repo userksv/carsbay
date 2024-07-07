@@ -3,6 +3,7 @@
 {% load humanize %}
 {% block content %}
 {% load static%}
+{% load i18n %}
 <div class="album py-5 bg-white mt-1">
   <div class="container">
     <div class="row">
@@ -25,7 +26,7 @@
             <div class="text-muted">
               {{post.city}}
             </div>
-            <small> posted {{post.date_posted|naturalday}}</small>
+            <small> {% translate "posted:" %} {{post.date_posted|naturalday}}</small>
           </a>
         </div>
       </div>
