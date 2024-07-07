@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
 {% block content %}
 
 {% if user.is_authenticated %}
@@ -8,10 +9,10 @@
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Delete post</legend>
         </fieldset>
-        <h3>Are you sure you want to delete post "{{object.make}}"</h3>
+        <h3>{% translate "Are you sure you want to delete post" %} "{{object.make}}"</h3>
         <div class="form-group">
-            <button class="btn btn-outline-danger" type="submit">Yes, delete</button>
-            <a class="btn btn-outline-secondary" href="{% url 'profile' %}">Cancel</a>
+            <button class="btn btn-outline-danger" type="submit">{% translate "Yes, delete" %}</button>
+            <a class="btn btn-outline-secondary" href="{% url 'profile' %}">{% translate "Cancel" %}</a>
         </div>
     </form>
 </div>

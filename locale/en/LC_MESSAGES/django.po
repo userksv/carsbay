@@ -8,93 +8,296 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-05 17:13+0900\n"
-"PO-Revision-Date: 2024-07-05 16:59+0900\n"
+"POT-Creation-Date: 2024-07-06 23:45+0900\n"
+"PO-Revision-Date: 2024-07-06 17:17+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
+# Translations for language names
+#: carsbay_project/settings.py:182
+msgid "English"
+msgstr "English"
+
+#: carsbay_project/settings.py:183
+msgid "Russian"
+msgstr "Russian"
+
+#: contact/forms.py:6
+msgid "Subject"
+msgstr ""
+
+#: contact/forms.py:7
+msgid "Your email"
+msgstr ""
+
+#: contact/forms.py:8
+msgid "Write your message..."
+msgstr ""
+
 #: main/forms.py:23
 msgid "Add images of your car"
 msgstr ""
 
-#: main/forms.py:59
-#, fuzzy
-#| msgid "fuel type"
+#: main/forms.py:68
 msgid "Select fuel type"
 msgstr "Fuel type"
 
-#: main/forms.py:60
+#: main/forms.py:69 search/forms.py:23
 msgid "Select year"
 msgstr ""
 
-#: main/forms.py:62
+#: main/forms.py:71
 msgid "make"
 msgstr "Make"
 
-#: main/forms.py:62
+#: main/forms.py:71
 msgid "Select car make"
 msgstr ""
 
-#: main/forms.py:69
+#: main/forms.py:78
 msgid "model"
 msgstr "Model"
 
-#: main/forms.py:69
+#: main/forms.py:78 search/forms.py:32
 msgid "Select model"
 msgstr ""
 
-#: main/forms.py:70
+#: main/forms.py:79
 msgid "fuel type"
 msgstr "Fuel type"
 
-#: main/forms.py:71
+#: main/forms.py:80
 msgid "city"
 msgstr "City"
 
-#: main/forms.py:71
+#: main/forms.py:80
 msgid "Select city"
 msgstr ""
 
-#: main/forms.py:72
+#: main/forms.py:81
 msgid "year"
 msgstr "Year"
 
-#: main/forms.py:73
+#: main/forms.py:82
 msgid "mileage"
 msgstr "Mileage"
 
-#: main/forms.py:74
+#: main/forms.py:83
 msgid "price"
 msgstr "Price"
 
-#: main/forms.py:81
+#: main/forms.py:90
 msgid "Write a short description"
 msgstr ""
 
-#: main/models.py:51
+#: main/models.py:50
 msgid "Description"
+msgstr ""
+
+#: main/views.py:60
+msgid "Your post has been created!"
+msgstr ""
+
+#: main/views.py:123
+msgid "Your post has been updated!"
+msgstr ""
+
+#: main/views.py:137
+msgid "Your post has been deleted sucessfully!"
+msgstr ""
+
+#: search/forms.py:24
+msgid "Select make"
+msgstr ""
+
+#: templates/chat/chat.html:14 templates/main/navbar.html:38
+msgid "Messages"
+msgstr ""
+
+#: templates/chat/chat.html:140
+msgid "Write message..."
+msgstr ""
+
+#: templates/chat/chat.html:144
+msgid "Send"
+msgstr ""
+
+#: templates/contact/contact.html:20
+msgid "Write your message"
+msgstr ""
+
+#: templates/contact/contact.html:25
+msgid "Send message"
+msgstr ""
+
+#: templates/contact/contact.html:26 templates/main/post_del_confirm.html:15
+#: templates/main/post_form.html:37 templates/main/post_update.html:32
+msgid "Cancel"
+msgstr ""
+
+#: templates/main/about.html:7
+msgid "Hi!"
+msgstr ""
+
+#: templates/main/about.html:8
+msgid "Here you can sell or buy used car"
+msgstr ""
+
+#: templates/main/navbar.html:15
+msgid "News"
+msgstr ""
+
+#: templates/main/navbar.html:18
+msgid "About"
+msgstr ""
+
+#: templates/main/navbar.html:21
+msgid "Contact us"
+msgstr ""
+
+#: templates/main/navbar.html:24
+msgid "Find car"
+msgstr ""
+
+#: templates/main/navbar.html:30
+msgid "Sell car"
+msgstr ""
+
+#: templates/main/navbar.html:42
+msgid "Profile"
+msgstr ""
+
+#: templates/main/navbar.html:49
+msgid "Logout"
+msgstr ""
+
+#: templates/main/navbar.html:53 templates/users/login.html:11
+#: templates/users/login.html:15 templates/users/register.html:17
+msgid "Login"
+msgstr ""
+
+#: templates/main/navbar.html:56
+msgid "Sign up"
+msgstr ""
+
+#: templates/main/post_del_confirm.html:12
+msgid "Are you sure you want to delete post"
+msgstr ""
+
+#: templates/main/post_del_confirm.html:14
+msgid "Yes, delete"
 msgstr ""
 
 #: templates/main/post_form.html:20
 msgid "Fill out car details"
 msgstr ""
 
-#: templates/main/post_form.html:37
+#: templates/main/post_form.html:36
 msgid "Place post"
 msgstr ""
 
-#: templates/main/post_form.html:38
-msgid "Cancel"
+#: templates/main/post_update.html:29
+msgid "Save"
 msgstr ""
 
-#~ msgid "English"
-#~ msgstr "English"
+#: templates/main/post_update.html:30 templates/users/profile.html:56
+msgid "Delete"
+msgstr ""
 
-#~ msgid "Russian"
-#~ msgstr "Russian"
+#: templates/search/search.html:15
+msgid "Select car parameters"
+msgstr ""
+
+#: templates/search/search.html:18
+msgid "Find"
+msgstr ""
+
+#: templates/users/login.html:17
+msgid "Need an account?"
+msgstr ""
+
+#: templates/users/login.html:20
+msgid "Forgot password?"
+msgstr ""
+
+#: templates/users/password_reset.html:8
+msgid ""
+"\n"
+"            Forgotten your password? Enter your email address below, and "
+"we'll email instructions for\n"
+"            setting a new one.\n"
+"            "
+msgstr ""
+
+#: templates/users/password_reset.html:21
+msgid "Reset my password"
+msgstr ""
+
+#: templates/users/password_reset_complete.html:6
+msgid "Password reset complete"
+msgstr ""
+
+#: templates/users/password_reset_complete.html:7
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr ""
+
+#: templates/users/password_reset_complete.html:8
+msgid "Log in"
+msgstr ""
+
+#: templates/users/password_reset_confirm.html:14
+msgid "Reset password"
+msgstr ""
+
+#: templates/users/password_reset_done.html:7
+msgid ""
+"\n"
+"    <p>\n"
+"        We’ve emailed you instructions for setting your password, if an "
+"account exists with the email you entered. You\n"
+"        should\n"
+"        receive them shortly.</p>\n"
+"    <p>If you don’t receive an email, please make sure you’ve entered the "
+"address you registered with, and check your\n"
+"        spam\n"
+"        folder.</p>\n"
+"    "
+msgstr ""
+
+#: templates/users/profile.html:41
+msgid "posted:"
+msgstr ""
+
+#: templates/users/profile.html:53
+msgid "Edit"
+msgstr ""
+
+#: templates/users/register.html:11
+msgid "Join now"
+msgstr ""
+
+#: templates/users/register.html:15
+msgid "Sign-up"
+msgstr ""
+
+#: templates/users/register.html:17
+msgid "Already how an account?"
+msgstr ""
+
+#: users/views.py:22
+msgid "Welcome"
+msgstr ""
+
+#: users/views.py:30
+msgid "Your account has been created! Now you can log in"
+msgstr ""
+
+#: users/views.py:57
+msgid "Your account has been updated!"
+msgstr ""

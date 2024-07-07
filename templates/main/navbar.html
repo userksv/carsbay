@@ -1,3 +1,4 @@
+{% load i18n %}
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">Carsbay</a>
@@ -11,22 +12,22 @@
           <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'news' %}">News</a>
+          <a class="nav-link" href="{% url 'news' %}">{% translate "News" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
+          <a class="nav-link" href="{% url 'about' %}">{% translate "About" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="{% url 'contact' %}">Contact us</a>
+          <a class="nav-link " href="{% url 'contact' %}">{% translate "Contact us" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="{% url 'search' %}">Find car</a>
+          <a class="nav-link " href="{% url 'search' %}">{% translate "Find car" %}</a>
         </li>
       </ul>
       <ul class="navbar-nav me-right mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="btn btn-primary btn-sm" style="width: 150px;" aria-current="page"
-            href="{% url 'post-create' %}">Sell car
+          <a class="btn btn-primary btn-sm" style="width: 150px;" aria-current="page" href="{% url 'post-create' %}">
+            {% translate "Sell car" %}
           </a>
         </li>
         {% if user.is_authenticated %}
@@ -34,29 +35,31 @@
           <!-- Update to dropdown after implementing chat and update profile form -->
           <a id="messages-navbar" class="nav-link active" aria-current="page" data-bs-toggle="offcanvas"
             href="#offcanvasExample" value="Contact seller" class="btn btn-secondary btn-sm w-50"
-            aria-controls="offcanvasExample" data-bs-target="#demo">Messages</a>
+            aria-controls="offcanvasExample" data-bs-target="#demo">{% translate "Messages" %}</a>
         </li>
         <li class="nav-item">
           <!-- Update to dropdown after implementing chat and update profile form -->
-          <a class="nav-link active " aria-current="page" href="{% url 'profile' %}">Profile</a>
+          <a class="nav-link active " aria-current="page" href="{% url 'profile' %}">{% translate "Profile" %}</a>
         </li>
         <li class="nav-item">
           <!-- Update to dropdown after implementing chat and update profile form -->
           <!-- <a class="nav-link active" aria-current="page" href="">Messages</a> -->
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">{% translate "Logout" %}</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'login' %}">{% translate "Login" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Sign up</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'register' %}">{% translate "Sign up" %}</a>
         </li>
         {% endif %}
+        {% include 'main/languages.html' %}
       </ul>
     </div>
+  </div>
   </div>
 </nav>
 {{user.id|json_script:"json_user_id"}}

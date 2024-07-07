@@ -2,6 +2,8 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+from django.utils.translation import gettext_lazy as _
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -177,8 +179,9 @@ USE_I18N = True
 USE_TZ = True
 
 LANGUAGES = (
-    ('en', 'English'),
-    ('ru', 'Russian')
+    ('en', _('English')),
+    ('ru', _('Russian')),
+    # ('ko', _('Korean')),
 )
 
 LOCALE_PATHS = [

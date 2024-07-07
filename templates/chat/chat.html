@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!-- char-area -->
 <section class="message-area">
     <div class="container">
@@ -10,7 +11,7 @@
                         <div class="modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="chat-header d-flex justify-content-between">
-                                    <h5 class="" id="offcanvasRightLabel">Messages</h5>
+                                    <h5 class="" id="offcanvasRightLabel">{% translate "Messages" %}</h5>
                                     <button type="button" class="btn-close btn-sm text-reset "
                                         data-bs-dismiss="offcanvas" aria-label="Close" id="close-canvas"></button>
                                     <!-- <div class="msg-search border-bottom">
@@ -136,11 +137,11 @@
                                 <div class="send-box">
                                     <div class="d-flex">
                                         <input type="text" class="form-control" id="chat-message-input"
-                                            aria-label="message…" placeholder="Write message…" disabled>
+                                            aria-label="message…" placeholder="{% trans 'Write message...' %}" disabled>
 
                                         <button type="button" id="chat-message-submit" disabled><i
                                                 class="fa fa-paper-plane" aria-hidden="true"></i>
-                                            Send</button>
+                                            {% translate "Send" %}</button>
                                     </div>
 
                                     <!-- <div class="send-btns">

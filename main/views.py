@@ -1,5 +1,6 @@
 import json
 from typing import Any
+
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from main.models import Post, PostImage, get_models
@@ -13,9 +14,10 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from main.forms import PostForm, PostUpdateForm, PostImageForm
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
+from main.forms import PostForm, PostUpdateForm, PostImageForm
 
 class PostView(ListView):
     paginate_by = 8
@@ -55,7 +57,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
             for image in images:
                 PostImage.objects.create(post=self.instance, images=image)
 
-        messages.success(self.request, "Your post has been created!")
+        messages.success(self.request, _("Your post has been created!"))
         return redirect(self.get_success_url())
 
     def get_success_url(self):
@@ -118,7 +120,7 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
                 PostImage.objects.create(post=self.object, images=image)
                 ...
 
-        messages.success(self.request, f"Your post has been updated!")
+        messages.success(self.request, _("Your post has been updated!"))
         return super().form_valid(form)
 
 
@@ -132,7 +134,7 @@ class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixi
         return reverse("profile")
 
     def form_valid(self, form):
-        messages.success(self.request, f"Your post has been deleted sucessfully!")
+        messages.success(self.request, _("Your post has been deleted sucessfully!"))
         return super().form_valid(form)
     
     def test_func(self):

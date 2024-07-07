@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
 {% load thumbnail %}
 {% load humanize %}
 {% block content %}
@@ -37,7 +38,7 @@
                                 <div class="d-flex flex-row">
                                     <div class="mb-1 me-2">
                                         <h5>{{post.price}} ₩</h5>
-                                        <small>posted: {{post.date_posted|naturalday}}</small>
+                                        <small>{% translate "posted:" %} {{post.date_posted|naturalday}}</small>
                                     </div>
                                 </div>
                             </div>
@@ -49,10 +50,10 @@
                                 <!-- <h6 class="text-success">Free shipping</h6> -->
                                 <div class="d-flex flex-column mt-4">
                                     <a href="{% url 'post-update' post.id %}" class="btn btn-secondary btn-sm"
-                                        type="button">Edit</a>
+                                        type="button">{% translate "Edit" %}</a>
                                     <a href="{% url 'post-delete' post.id %}" class="btn btn-outline-danger btn-sm mt-2"
                                         type="button">
-                                        Delete
+                                        {% translate "Delete" %}
                                     </a>
                                 </div>
                             </div>

@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
 {% block content %}
 {% load crispy_forms_tags %}
 
@@ -16,13 +17,13 @@
     <form method="POST" novalidate>
         {% csrf_token %}
         <div class="form-group">
-            <legend class="border-bottom mb-2">Write your message</legend>
+            <legend class="border-bottom mb-2">{% translate "Write your message" %}</legend>
             <fieldset class="form-group">
                 {{form|crispy}}
             </fieldset>
             <div class="btn-group d-flex">
-                <button class="btn btn-secondary btn-sm m-1 w-50" type="submit">Send message</button>
-                <a class="btn btn-secondary btn-sm m-1 w-50" href="{% url 'home' %}">Cancel</a>
+                <button class="btn btn-secondary btn-sm m-1 w-50" type="submit">{% translate "Send message" %}</button>
+                <a class="btn btn-secondary btn-sm m-1 w-50" href="{% url 'home' %}">{% translate "Cancel" %}</a>
             </div>
         </div>
     </form>

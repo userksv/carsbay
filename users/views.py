@@ -1,13 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages 
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, ExampleForm
-from django.contrib.auth import user_logged_in
-from main.models import Post, PostImage
-from .models import Profile
-from django.views.decorators.csrf import csrf_exempt
-from .api.serializers import ProfileSerializer
 from django.http import JsonResponse
+from django.contrib.auth import user_logged_in
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.translation import gettext_lazy
+
+from main.models import Post, PostImage
+
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, ExampleForm
+from .models import Profile
+from .api.serializers import ProfileSerializer
 
 
 # Create your views here.
@@ -15,7 +18,8 @@ def logged_in_message(sender, user, request, **kwargs):
     """
     Add a welcome message when the user logs in
     """
-    messages.info(request, f'Welcome {user.username}!')
+    
+    messages.info(request, gettext_lazy("Welcome") + user.username)
 
 user_logged_in.connect(logged_in_message)
 def register(request):
@@ -23,7 +27,7 @@ def register(request):
         form = UserRegisterForm(request.POST) # get data from register form and clean it
         if form.is_valid():
             form.save()#
-            messages.success(request, f'Your account has been created! Now you can log in')
+            messages.success(request, gettext_lazy('Your account has been created! Now you can log in'))
             return redirect('login')
     else :
         form = UserRegisterForm()
@@ -50,7 +54,7 @@ def profile_update(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()#
             p_form.save()#
-            messages.success(request, f'Your account has been updated!')
+            messages.success(request, gettext_lazy('Your account has been updated!'))
             return redirect('profile')
     else :
         u_form = UserUpdateForm(instance=request.user)
