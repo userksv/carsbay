@@ -19,7 +19,7 @@ def logged_in_message(sender, user, request, **kwargs):
     Add a welcome message when the user logs in
     """
     
-    messages.info(request, gettext_lazy("Welcome") + user.username)
+    messages.info(request, gettext_lazy("Welcome ") + user.username)
 
 user_logged_in.connect(logged_in_message)
 def register(request):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-07 11:02+0900\n"
+"POT-Creation-Date: 2024-07-07 12:34+0900\n"
 "PO-Revision-Date: 2024-07-06 17:17+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -198,6 +198,28 @@ msgstr ""
 msgid "Yes, delete"
 msgstr ""
 
+#: templates/main/post_detail.html:46
+msgid "Production year"
+msgstr ""
+
+#: templates/main/post_detail.html:48
+#, fuzzy
+#| msgid "mileage"
+msgid "Mileage"
+msgstr "Mileage"
+
+#: templates/main/post_detail.html:50
+msgid "City"
+msgstr ""
+
+#: templates/main/post_detail.html:61 templates/users/profile.html:53
+msgid "Edit"
+msgstr ""
+
+#: templates/main/post_detail.html:67 templates/main/post_detail.html:72
+msgid "Contact seller"
+msgstr ""
+
 #: templates/main/post_form.html:20
 msgid "Fill out car details"
 msgstr ""
@@ -282,10 +304,6 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/users/profile.html:53
-msgid "Edit"
-msgstr ""
-
 #: templates/users/register.html:11
 msgid "Join now"
 msgstr ""
@@ -299,7 +317,7 @@ msgid "Already how an account?"
 msgstr ""
 
 #: users/views.py:22
-msgid "Welcome"
+msgid "Welcome "
 msgstr ""
 
 #: users/views.py:30

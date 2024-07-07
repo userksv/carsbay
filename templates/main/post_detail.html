@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load humanize %}
+{% load i18n %}
 {% block content %}
 
 <div class="container">
@@ -42,11 +43,11 @@
                     <div class="col">
                         <h4>{{post.price|intcomma}} ₩</h4>
                     </div>
-                    <div class="col">Production year</div>
+                    <div class="col">{% translate "Production year" %}</div>
                     <div class="col">{{post.year}}</div>
-                    <div class="col">Mileage</div>
+                    <div class="col">{% translate "Mileage" %}</div>
                     <div class="col">{{post.mileage|intcomma}} km</div>
-                    <div class="col">City</div>
+                    <div class="col">{% translate "City" %}</div>
                     <div class="col">{{post.city}}</div>
                 </div>
                 <hr>
@@ -56,20 +57,19 @@
                 {% if user.is_authenticated %}
                 {% if user == post.author %}
                 <div>
-                    <a href="{% url 'post-update' post.id %}" class="btn btn-secondary btn-sm w-50"
-                        type="button">Edit</a>
+                    <a href="{% url 'post-update' post.id %}" class="btn btn-secondary btn-sm w-50" type="button">
+                        {%translate "Edit" %}</a>
                 </div>
                 {% else %}
                 <a id="post-details-message" class="btn btn-secondary btn-sm w-50" aria-current="page"
                     data-bs-toggle="offcanvas" href="#offcanvasExample" value="Contact seller"
-                    class="btn btn-secondary btn-sm w-50" aria-controls="offcanvasExample"
-                    data-bs-target="#demo">Contact seller</a>
+                    class="btn btn-secondary btn-sm w-50" aria-controls="offcanvasExample" data-bs-target="#demo">
+                    {% translate "Contact seller" %}</a>
                 {% endif %}
                 {% else %}
                 <div>
                     <a href="{% url 'login' %}?next={{request.path}}" class="btn btn-secondary btn-sm w-50"
-                        type="button">Log in to send
-                        message</a>
+                        type="button">{% translate "Contact seller" %}</a>
                 </div>
                 {% endif %}
 

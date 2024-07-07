@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-07 11:02+0900\n"
-"PO-Revision-Date: 2024-07-07 11:04+0900\n"
+"POT-Creation-Date: 2024-07-07 12:34+0900\n"
+"PO-Revision-Date: 2024-07-07 12:35+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -197,6 +197,26 @@ msgstr "Вы уверены что хотите удалить "
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
+#: templates/main/post_detail.html:46
+msgid "Production year"
+msgstr "Год производства"
+
+#: templates/main/post_detail.html:48
+msgid "Mileage"
+msgstr "Пробег"
+
+#: templates/main/post_detail.html:50
+msgid "City"
+msgstr "Город"
+
+#: templates/main/post_detail.html:61 templates/users/profile.html:53
+msgid "Edit"
+msgstr "Редактировать"
+
+#: templates/main/post_detail.html:67 templates/main/post_detail.html:72
+msgid "Contact seller"
+msgstr "Написать продавцу"
+
 #: templates/main/post_form.html:20
 msgid "Fill out car details"
 msgstr "Заполните данные об авто"
@@ -285,10 +305,6 @@ msgstr ""
 "Если Вы не получили письмо с инструкциями, пожалуйста проверьте, правильность введения электронной почты.\n"
 "</p>"
 
-#: templates/users/profile.html:53
-msgid "Edit"
-msgstr "Редактировать"
-
 #: templates/users/register.html:11
 msgid "Join now"
 msgstr "Просоединиться"
@@ -302,7 +318,7 @@ msgid "Already how an account?"
 msgstr "Есть аккаунт?"
 
 #: users/views.py:22
-msgid "Welcome"
+msgid "Welcome "
 msgstr "Добро пожаловать "
 
 #: users/views.py:30
