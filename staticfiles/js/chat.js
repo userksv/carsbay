@@ -107,15 +107,20 @@ function connect() {
       chatLog.textContent = "No messages";
     }
     for (let i = 0; i < messages.length; i++) {
+      const fromUser = messages[i].from_user["username"];
       if (username == messages[i].to_user.id) {
         msg = `<li class="sender">
           <p>${messages[i].content}</p>
-          <span class="time">${timestampToTime(messages[i].timestamp)}</span>
+          <span class="time">${timestampToTime(
+            messages[i].timestamp
+          )}, <span class="fw-bold">${fromUser}</span></span>
         </li>`;
       } else {
         msg = `<li class="replay">
-          <p>${messages[i].content}</p>
-          <span class="time">${timestampToTime(messages[i].timestamp)}</span>
+        <p>${messages[i].content}</p>
+        <span class="time">${timestampToTime(
+          messages[i].timestamp
+        )}, <span class="fw-bold">me</span></span>
         </li>`;
       }
       chatLog.innerHTML += msg;
@@ -125,6 +130,7 @@ function connect() {
   }
 
   function displayMessage(message) {
+    const fromUser = message["message"].from_user["username"];
     // appends single message to chat-box
     if (chatLog.textContent === "No messages") {
       chatLog.innerHTML = "";
@@ -134,14 +140,14 @@ function connect() {
           <p>${message["message"].content}</p>
           <span class="time">${timestampToTime(
             message["message"].timestamp
-          )}</span>
+          )}, <span class="fw-bold">${fromUser}</span></span>
         </li>`;
     } else {
       msg = `<li class="replay">
           <p>${message["message"].content}</p>
           <span class="time">${timestampToTime(
             message["message"].timestamp
-          )}</span>
+          )}, <span class="fw-bold">me</span></span>
         </li>`;
     }
     $(".modal-body").animate({ scrollTop: $(document).height() }, "fast");
@@ -163,7 +169,7 @@ function connect() {
     const p = document.createElement("p");
 
     a.href = "#";
-    a.className = "d-flex align-items-center";
+    a.className = "d-flex align-items-center thumbnail";
     a.id = `${conversation.id}`;
     div.className = "flex-shrink-0";
     // change image size
@@ -304,7 +310,7 @@ function connect() {
 
 // userId contains user id from 'main/base.html' if user is authenticated
 const userId = document.getElementById("json_username").textContent.trim();
-if (userId) {
+if (userId !== "null") {
   connect();
 }
 // for responsive design
