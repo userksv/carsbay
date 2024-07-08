@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-07 12:34+0900\n"
-"PO-Revision-Date: 2024-07-07 12:35+0900\n"
+"POT-Creation-Date: 2024-07-08 11:50+0900\n"
+"PO-Revision-Date: 2024-07-08 11:51+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -304,6 +304,11 @@ msgstr ""
 "<p>\n"
 "Если Вы не получили письмо с инструкциями, пожалуйста проверьте, правильность введения электронной почты.\n"
 "</p>"
+
+#: templates/users/profile.html:8
+#| msgid "You have been logout"
+msgid "You have no posts"
+msgstr "У вас нет активных объявлений"
 
 #: templates/users/register.html:11
 msgid "Join now"
