@@ -169,7 +169,7 @@ function connect() {
     const p = document.createElement("p");
 
     a.href = "#";
-    a.className = "d-flex align-items-center";
+    a.className = "d-flex align-items-center thumbnail";
     a.id = `${conversation.id}`;
     div.className = "flex-shrink-0";
     // change image size

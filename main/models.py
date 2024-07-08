@@ -8,8 +8,11 @@ import io, os
 import boto3
 
 boto3.setup_default_session(region_name=os.getenv('AWS_S3_REGION_NAME'))
+#TODO
+# Set limit for images max = 12
 
-# Create your models here.
+
+
 class Brand(models.Model):
     make = models.CharField(max_length=128)
     def __str__(self) -> str:
