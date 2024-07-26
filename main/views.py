@@ -19,6 +19,7 @@ from django.utils.translation import gettext_lazy as _
 
 from main.forms import PostForm, PostUpdateForm, PostImageForm
 
+
 class PostView(ListView):
     paginate_by = 8
     model = Post

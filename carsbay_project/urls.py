@@ -13,6 +13,7 @@ urlpatterns = i18n_patterns(
     path('news/', include('news.urls')),
     path('search/', include('search.urls')),
     path('rosetta/', include('rosetta.urls')),
+    path('blog/', include('blog.urls')),
 )
 
 if settings.DEBUG:
